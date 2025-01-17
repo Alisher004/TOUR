@@ -10,12 +10,12 @@ function App() {
 
   return (
     <>
-    {/* <h2>{count}</h2>
+      {/* <h2>{count}</h2>
       <button onClick={() => setCount(count+1)}>add</button>
       {count &&
       <button onClick={() => setCount(count-1)}>dec</button>
       } */}
-            <RouterProvider router={myRouter}/>
+      <RouterProvider router={myRouter} />
 
       {/* <a href="/">Home</a>
       <a href="./About">About</a>
