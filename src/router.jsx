@@ -1,11 +1,14 @@
 import { createBrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
 import Layout from "./components/Layout/Layout";
-import ItemUser from "./pages/ItemUser";
-import User2 from "./pages/User2";
-import Ali from "./pages/Ali";
+import Tours from "./pages/Tours";
+import Hotels from "./pages/Hotels";
+import Countries from "./pages/Countries";
+import Booking from "./pages/Booking";
+import Checkout from "./pages/Checkout";
+import Success from "./pages/Success";
+import About from "./pages/About";
+import Contacts from "./pages/Contacts";
 
 export const myRouter = createBrowserRouter([
     {
@@ -17,25 +20,37 @@ export const myRouter = createBrowserRouter([
                 element: <Home />,
             },
             {
-                path: "about",
-                element: <About />
+                path: "/tours",
+                element: <Tours />,
             },
             {
-                path: "contact",
-                element: <Contact />
+                path: "/hotels",
+                element: <Hotels />,
             },
             {
-                path: "contact/:idDrink",
-                element: <User2 />
+                path: "/countries",
+                element: <Countries />,
             },
             {
-                path: "user/:id",
-                element: <ItemUser />
-            },  
-            {
-                path: "ali",
-                element: <Ali />
+                path: "/booking/:id",
+                element: <Booking />,
             },
+            {
+                path: "/checkout",
+                element: <Checkout />,
+            },
+            {
+                path: "/success",
+                element: <Success />,
+            },
+            {
+                path: "/about",
+                element: <About />,
+            },
+            {
+                path: "/contacts",
+                element: <Contacts />,
+            }
         ]
     },
-])
+]);

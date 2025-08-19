@@ -1,0 +1,110 @@
+.baner{
+  position: relative;
+}
+.banerimg {
+  width: 100%;
+}
+.info-baner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -90%);
+}
+.info-baner h2 {
+  font-size: 110px;
+  color: white;
+  line-height: 100px;
+}
+.info-baner p {
+  margin-top: 20px;
+  font-size: 28px;
+  color: white;
+}
+.box2 {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  background-color: white;
+  border-radius: 20px;
+  width: 800px;
+  padding: 10px;
+  text-align: left;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+.select {
+  display: grid;
+}
+
+select {
+  border: none; /* Бордер жок */
+  background: transparent; /* Фон жок (тунук) */
+  font-size: 16px; /* Шрифт өлчөмү */
+  font-weight: 500; /* Шрифт калыңдыгы */
+  outline: none; /* Фокус учурунда көк рамка чыкпайт */
+  appearance: none; /* Браузердин демейки стилдерин өчүрүү */
+  -webkit-appearance: none; /* Safari үчүн */
+  -moz-appearance: none; /* Firefox үчүн */
+  cursor: pointer; /* Кол тийгенде курсор өзгөрөт */
+}
+
+/* Кол тийгенде түс өзгөртүү */
+select:focus {
+  background-color: #f5f5f5;
+  border-radius: 6px;
+}
+.date-btn {
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 5px;
+  border-bottom: 1px solid #ccc;
+}
+
+.date-btn:hover {
+  color: #3d91ff;
+}
+.peoples input {
+  display: grid;
+}
+.podbtn {
+  width: 168px;
+  height: 40px;
+  background-color: #ec1c24;
+  border-radius: 30px;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.calendar-modal {
+  display: none;
+  position: absolute;
+  top: 70px;
+  left: 220px;
+  z-index: 999;
+  background: white;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.calendar-modal.show {
+  display: block;
+}
+.turis{
+  width: 80px;
+  font-size: 16px;
+}
