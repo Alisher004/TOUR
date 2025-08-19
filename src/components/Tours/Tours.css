@@ -1,0 +1,223 @@
+.tours-container {
+  overflow-x: scroll;
+  margin-top: 100px;
+}
+.tours-container h1 {
+  text-align: left;
+  margin: 100px auto 0;
+  font-size: 44px;
+  font-weight: 500;
+  font-family: Roboto;
+  color: #1C1C1C;
+}
+.tours-container h4 {
+  text-align: left;
+  font-size: 24px;
+  font-weight: 300;
+  font-family: Roboto;
+  margin-bottom: 20px;
+  color: #777474;
+}
+
+
+.tours-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  padding-bottom: 10px;
+}
+
+.tour-card {
+  min-width: 300px;
+  max-width: 300px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.tour-image {
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
+  color: #fff;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.tour-info {
+  padding: 10px;
+}
+
+.tour-info h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.tour-info p {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.tour-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stars {
+  color: #fbbf24;
+  font-size: 14px;
+}
+
+.tour-bottom button {
+  padding: 4px 8px;
+  font-size: 12px;
+  background: #3b82f6;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* NEW: full-image card with overlay */
+.image-card {
+  height: 260px;
+  max-width: 200px;
+  min-width: 200px;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+}
+.image-card .image-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+}
+.image-card .overlay-top {
+  display: flex;
+  justify-content: flex-end;
+}
+.image-card .badge {
+  background: rgba(0, 0, 0, 0.35);
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+}
+.image-card .overlay-bottom h3 {
+  font-size: 16px;
+  margin: 0 0 6px;
+}
+.image-card .overlay-bottom .meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  opacity: 0.95;
+  margin-bottom: 8px;
+}
+
+.filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 0 0 10px 0;
+}
+.filter-bar button {
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+.emoji-image {
+  font-size: 64px;
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+.details-list {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 12px 0;
+  font-size: 14px;
+}
+.details-list li {
+  margin: 4px 0;
+}
+
+.includes {
+  margin-bottom: 12px;
+}
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+}
+.chip {
+  background: #f3f4f6;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+.purchase-form input {
+  width: 100%;
+  margin: 6px 0;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.emoji-bg {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 96px;
+  pointer-events: none;
+}
+.cartimage{
+  width: 100%;
+  height: 100%;
+}

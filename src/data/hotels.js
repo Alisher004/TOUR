@@ -7,7 +7,7 @@ export const hotels = [
     stars: 5,
     amenities: ["Pool", "WiFi", "Spa"],
     pricePerNight: 120,
-    thumbnail: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1200&q=80&auto=format",
+    thumbnail: "https://icdn.lenta.ru/images/2022/12/07/19/20221207192626772/square_320_118a8ef52ef9fb0a4598fd3812684224.jpg",
     description: "Деңиз жээгинде 5⭐ отель."
   },
   {

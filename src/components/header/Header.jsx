@@ -4,24 +4,12 @@ import logo from "../../assets/logo.png";
 import phone from "../../assets/phone.svg";
 import location from "../../assets/location.svg";
 import strelka from "../../assets/strelka.svg";
-import { Link } from "react-router-dom";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
   const [formData, setFormData] = useState({ name: "", phone: "" });
-
-  const NAV_ITEMS = [
-    { href: "/", label: "Главная" },
-    { href: "/tours", label: "Туры" },
-    { href: "/hotels", label: "Отели" },
-    { href: "/countries", label: "Страны" },
-    { href: "/about", label: "О нас" },
-    { href: "/contacts", label: "Контакты" },
-  ];
-  const visible = NAV_ITEMS.slice(0, 4);
-  const overflow = NAV_ITEMS.slice(4);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -57,39 +45,35 @@ function Header() {
     <div className="header">
       <div className="container">
         <div className="info-header">
-          <Link to="/" onClick={closeMenu}>
+          <a href="/" onClick={closeMenu}>
             <img src={logo} alt="" className="hlogo" />
-          </Link>
+          </a>
           <ul className={`navigation ${isMenuOpen ? "active" : ""}`}>
-            {visible.map((i) => (
-              <li key={i.href}>
-                <Link to={i.href} onClick={closeMenu}>
-                  {i.label}
-                </Link>
-              </li>
-            ))}
-            {overflow.length > 0 && (
-              isMenuOpen ? (
-                overflow.map((i) => (
-                  <li key={i.href}>
-                    <Link to={i.href} onClick={closeMenu}>
-                      {i.label}
-                    </Link>
-                  </li>
-                ))
-              ) : (
-                <li style={{ position: "relative" }}>
-                  <span className="more-trigger">Еще</span>
-                  <div className="more-menu">
-                    {overflow.map((i) => (
-                      <Link key={i.href} to={i.href} onClick={closeMenu} className="more-item">
-                        {i.label}
-                      </Link>
-                    ))}
-                  </div>
-                </li>
-              )
-            )}
+            <li>
+              <a href="" onClick={closeMenu}>
+                Подбор тура
+              </a>
+            </li>
+            <li>
+              <a href="" onClick={closeMenu}>
+                Горящие туры
+              </a>
+            </li>
+            <li>
+              <a href="" onClick={closeMenu}>
+                Страны
+              </a>
+            </li>
+            <li>
+              <a href="" onClick={closeMenu}>
+                Отели
+              </a>
+            </li>
+            <li>
+              <a href="" onClick={closeMenu}>
+                О нас
+              </a>
+            </li>
           </ul>
           <div className="icons">
             <button onClick={openModal}>оставить заявку</button>
@@ -138,6 +122,7 @@ function Header() {
         </div>
       )}
 
+      {/* Success Modal */}
       {isSuccessModalOpen && (
         <div className="modal success-modal">
           <div className="modal-content">

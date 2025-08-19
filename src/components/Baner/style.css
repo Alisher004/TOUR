@@ -1,5 +1,6 @@
 .baner{
   position: relative;
+  margin-top: 20px;
 }
 .banerimg {
   width: 100%;
@@ -87,6 +88,7 @@ select:focus {
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
+  padding: 5px;
 }
 
 .calendar-modal {

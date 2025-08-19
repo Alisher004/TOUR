@@ -18,7 +18,7 @@ function Baner() {
 
   return (
     <div className="baner">
-      <img src={banerimg} alt="" className="banerimg" />
+      <img src={banerimg} alt="" className="banerimg" loading="lazy"/>
       <div className="info-baner">
         <h2>Путешествия мечты</h2>
         <p>выбери свою</p>
