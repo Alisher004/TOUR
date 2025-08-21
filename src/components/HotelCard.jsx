@@ -9,7 +9,7 @@ export default function HotelCard({ hotel, onBook }) {
         <div style={{ color: "#6b7280", fontSize: 14 }}>{hotel.city} • {hotel.stars}⭐</div>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 8 }}>
           <span style={{ fontWeight: 700 }}>${hotel.pricePerNight}/түн</span>
-          <button onClick={() => onBook(hotel.id)} style={{ padding: "6px 12px", borderRadius: 8, background: "#0d6efd", color: "white", border: "none" }}>Бронь</button>
+          <button onClick={() => onBook(hotel.id)} style={{ padding: "6px 12px", borderRadius: 8, background: "black", color: "white", border: "none" }}>Бронь</button>
         </div>
       </div>
     </div>
