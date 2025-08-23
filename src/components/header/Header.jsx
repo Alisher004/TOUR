@@ -77,7 +77,9 @@ function Header() {
           </ul>
           <div className="icons">
             <button onClick={openModal}>оставить заявку</button>
+            <a href="/contacts">
             <img src={phone} alt="" />
+            </a>
             <img src={location} alt="" />
             <div className="mobile-menu-toggle" onClick={toggleMenu}>
               <span></span>
