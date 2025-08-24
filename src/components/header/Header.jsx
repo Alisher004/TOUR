@@ -8,24 +8,20 @@ import strelka from "../../assets/strelka.svg";
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
-  const [formData, setFormData] = useState({ name: "", phone: "" });
+  const [isSuccess, setIsSuccess] = useState(false); // Заявка статусу
+  const [formData, setFormData] = useState({ name: "", phone: "" })
+  const [showPhonePopup, setShowPhonePopup] = useState(false);
+  const [showLocationPopup, setShowLocationPopup] = useState(false);;
+  const [copied, setCopied] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-  };
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const closeMenu = () => setIsMenuOpen(false);
 
   const openModal = () => {
     setIsModalOpen(true);
+    setIsSuccess(false); // жаңы ачканда текстти тазалайбыз
   };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
+  const closeModal = () => setIsModalOpen(false);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -34,11 +30,23 @@ function Header() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    closeModal();
-    setIsSuccessModalOpen(true);
+
+    // Форма тазаланып, текст чыгат
+    setFormData({ name: "", phone: "" });
+    setIsSuccess(true);
+
+    // 3 секунддан кийин текст өчөт жана модал жабылат
     setTimeout(() => {
-      setIsSuccessModalOpen(false);
+      setIsSuccess(false);
+      setIsModalOpen(false); // модалды жабабыз
     }, 3000);
+  };
+
+  const handleCopy = (text) => {
+    navigator.clipboard.writeText(text).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
   };
 
   return (
@@ -77,10 +85,48 @@ function Header() {
           </ul>
           <div className="icons">
             <button onClick={openModal}>оставить заявку</button>
-            <a href="/contacts">
-            <img src={phone} alt="" />
-            </a>
-            <img src={location} alt="" />
+            {/* Phone Icon */}
+            <div style={{ position: "relative", display: "inline-block" }}>
+              <img
+                src={phone}
+                alt=""
+                style={{ cursor: "pointer" }}
+                onClick={() => {
+                  setShowPhonePopup(!showPhonePopup);
+                  setShowLocationPopup(false);
+                }}
+              />
+              {showPhonePopup && (
+                <div className="popup">
+                  <p
+                    onClick={() => handleCopy("+996 555 123 456")}
+                    style={{ cursor: "pointer", margin: 0 }}
+                  >
+                    📞 +996 555 123 456
+                  </p>
+                  {copied && <small style={{ color: "green" }}>Скопировано!</small>}
+                </div>
+              )}
+            </div>
+            
+            {/* Location Icon */}
+            <div style={{ position: "relative", display: "inline-block" }}>
+              <img
+                src={location}
+                alt=""
+                style={{ cursor: "pointer" }}
+                onClick={() => {
+                  setShowLocationPopup(!showLocationPopup);
+                  setShowPhonePopup(false);
+                }}
+              />
+              {showLocationPopup && (
+                <div className="popup">
+                  <p style={{ margin: 0 }}>📍 Бишкек, Турусбекова 109/1</p>
+                </div>
+              )}
+            </div>
+
             <div className="mobile-menu-toggle" onClick={toggleMenu}>
               <span></span>
               <span></span>
@@ -95,40 +141,40 @@ function Header() {
           <div className="modal-content">
             <button className="close-button" onClick={closeModal}>
               X
-            </button><br />
-            <h1>Перезвонить  вам?</h1>
-            <p>Оставьте свой номер 
-            и наш специалист свяжется с вами</p>
-            <form onSubmit={handleSubmit}>
-              <input
-                type="text"
-                name="name"
-                placeholder="Ваше имя"
-                value={formData.name}
-                onChange={handleInputChange}
-                required
-              />
-              <input
-                type="tel"
-                name="phone"
-                placeholder="Ваш телефон"
-                value={formData.phone}
-                onChange={handleInputChange}
-                required
-              />
-              <button type="submit" className="submit">Отправить
-                <img src={strelka} alt="" />
-              </button>
-            </form>
-          </div>
-        </div>
-      )}
+            </button>
+            <br />
+            <h1>Перезвонить вам?</h1>
+            <p>Оставьте свой номер и наш специалист свяжется с вами</p>
 
-      {/* Success Modal */}
-      {isSuccessModalOpen && (
-        <div className="modal success-modal">
-          <div className="modal-content">
-            <p>Заявка отправлена!</p>
+            {!isSuccess ? (
+              <form onSubmit={handleSubmit}>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Ваше имя"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  required
+                />
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="Ваш телефон"
+                  value={formData.phone}
+                  onChange={handleInputChange}
+                  required
+                />
+                <button type="submit" className="submit">
+                  Отправить <img src={strelka} alt="" />
+                </button>
+              </form>
+            ) : (
+              <h1
+                style={{ color: "green", fontSize: "24px", marginTop: "20px" }}
+              >
+                ✅ Заявка отправлена!
+              </h1>
+            )}
           </div>
         </div>
       )}

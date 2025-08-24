@@ -69,7 +69,7 @@ function Footer() {
               <a href="">О нас</a>
             </li>
             <li>
-              <a href="">контакты</a>
+              <a href="/contacts">контакты</a>
             </li>
           </ul>
           <hr className="hr" />

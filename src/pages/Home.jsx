@@ -3,8 +3,8 @@ import Baner from "../components/Baner";
 import Tours from "../components/Tours/TourCard";
 import FeaturedCarousel from "../components/hotels";
 import Reviews from "../components/Review";
-import News from "../components/News";
-import AboutSection from "../components/AboutSection";
+import News from "../components/New/News";
+import AboutSection from "../components/About/AboutSection";
 
 function Home() {
   return (

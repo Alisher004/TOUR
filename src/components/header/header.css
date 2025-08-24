@@ -58,10 +58,11 @@
   border: 1px solid black;
   color: black;
   border-radius: 100px;
-  padding: 10px 20px;
+  padding: 8px 15px;
   background: transparent;
   cursor: pointer;
   transition: all 0.3s ease;
+  font-size: 16px;
 }
 
 .info-header button:hover {
@@ -268,4 +269,21 @@
   transition: all 0.3s ease;
   margin: 0 auto;
   padding: 5px;
+}
+.popup {
+  position: absolute;
+  top: 40px; /* иконканын астында чыгышы үчүн */
+  right: -30px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 8px 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+  min-width: 160px;
+}
+.popup p {
+  margin: 0;
+  font-size: 14px;
+  color: #333;
 }
