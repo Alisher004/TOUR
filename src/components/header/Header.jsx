@@ -58,27 +58,27 @@ function Header() {
           </a>
           <ul className={`navigation ${isMenuOpen ? "active" : ""}`}>
             <li>
-              <a href="" onClick={closeMenu}>
+              <a href="/tour-selection" onClick={closeMenu}>
                 Подбор тура
               </a>
             </li>
             <li>
-              <a href="" onClick={closeMenu}>
+              <a href="/tours" onClick={closeMenu}>
                 Горящие туры
               </a>
             </li>
             <li>
-              <a href="" onClick={closeMenu}>
+              <a href="/countries" onClick={closeMenu}>
                 Страны
               </a>
             </li>
             <li>
-              <a href="" onClick={closeMenu}>
+              <a href="/hotels" onClick={closeMenu}>
                 Отели
               </a>
             </li>
             <li>
-              <a href="" onClick={closeMenu}>
+              <a href="/about" onClick={closeMenu}>
                 О нас
               </a>
             </li>
