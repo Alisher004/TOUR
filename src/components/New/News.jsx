@@ -38,7 +38,7 @@ const newsData = [
 
 export default function NewsSection() {
   return (
-    <section className="news-section">
+    <section className="news-section container" style={{ marginTop: "100px", marginBottom: "100px" }}>
       <h2 className="title">НОВОСТИ</h2>
       <p className="subtitle">СОБЫТИЯ В МИРЕ ТУРИЗМА</p>
 

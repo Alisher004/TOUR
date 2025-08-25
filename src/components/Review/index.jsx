@@ -24,7 +24,7 @@ export default function Reviews() {
   const durationSec = Math.max(20, items.length * 6);
 
   return (
-    <div className="container" style={{ paddingTop: 24, paddingBottom: 24 }}>
+    <div className="container" style={{ marginTop: "100px", marginBottom: "100px" }}>
       <h2 style={{ fontWeight: 700, fontSize: 24, marginBottom: 12 }}>Отзывы</h2>
 
       <div className="reviews-marquee">

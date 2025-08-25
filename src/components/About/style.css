@@ -1,7 +1,5 @@
 /* AboutUs.css */
 .about-us {
-  max-width: 1200px;
-  margin: 100px auto;
   font-family: sans-serif;
   color: #111;
 }
@@ -9,6 +7,7 @@
 .about-header {
   text-align: center;
   margin-bottom: 40px;
+  margin-top: 50px;
 }
 
 .about-header .subtitle {
@@ -34,14 +33,28 @@
 }
 
 .about-text {
-  flex: 1;
+  width: 50%;
+  text-align: left;
+  line-height: 26px;
 }
 
-.large-letter {
-  font-size: 36px;
-  font-weight: bold;
+.large-letter p{
+  font-size: 16px;
+  margin-top: 20px;
 }
+.span{
+  font-size: 85px;
+  padding: 0;
+}
+.text-flex{
+  display: flex;
+  align-items: start;
+  margin-top: 30px;
+}
+.about-image{
+  width: 50%;
 
+}
 .about-image img {
   width: 100%;
   border-radius: 12px;
@@ -49,17 +62,22 @@
 
 .about-extra {
   display: flex;
-  gap: 20px;
   margin-bottom: 40px;
+  justify-content: space-between;
+  align-items: center;
 }
-
+.extra-image{
+  width: 400px;
+}
 .extra-image img {
   width: 100%;
   border-radius: 12px;
 }
 
-.extra-text {
-  flex: 1;
+.about-extra p {
+  width: 350px;
+  text-align: left;
+  line-height: 26px;
 }
 
 .about-footer {

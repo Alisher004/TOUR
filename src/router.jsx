@@ -8,6 +8,8 @@ import Countries from "./pages/Countries";
 import Booking from "./pages/Booking";
 import About from "./pages/About";
 import Contacts from "./pages/Contacts";
+import Hotels from "./components/hotels";
+import TourSelection from "./components/TourSelection";
 
 export const myRouter = createBrowserRouter([
   {
@@ -18,6 +20,9 @@ export const myRouter = createBrowserRouter([
       { path: "/tours", element: <Tours /> },
       { path: "/tours/:id", element: <TourDetail /> },
       { path: "/countries", element: <Countries /> },
+      { path: "/hotels", element: <Hotels /> },
+      { path: "/hotels/:id", element: <TourDetail /> },
+      { path: "/tour-selection", element: <TourSelection /> },
       { path: "/booking/tour/:id", element: <Booking /> },
       { path: "/booking/hotels/:id", element: <Booking /> },
       { path: "/about", element: <About /> },
