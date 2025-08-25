@@ -1,26 +1,38 @@
-.baner{
+.baner {
   position: relative;
-  margin-top: 20px;
+  width: 100%;
+  max-height: 600px; /* сүрөт чоноюп кетпеши үчүн чектөө */
+  overflow: hidden;
+  margin-top: 60px;
 }
+
 .banerimg {
   width: 100%;
+  height: 100%;
+  object-fit: cover; /* сүрөт контейнерге туура келет */
+  display: block;
 }
+
 .info-baner {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -90%);
+  text-align: center;
 }
+
 .info-baner h2 {
   font-size: 100px;
   color: white;
   line-height: 100px;
 }
+
 .info-baner p {
   margin-top: 20px;
   font-size: 28px;
   color: white;
 }
+
 .box2 {
   position: absolute;
   top: 100%;
@@ -30,34 +42,35 @@
   justify-content: space-between;
   align-items: center;
   gap: 20px;
-  background-color: white;
+  background-color: #fff;
   border-radius: 20px;
   width: 800px;
-  padding: 10px;
+  padding: 10px 20px;
   text-align: left;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
+
 .select {
   display: grid;
 }
 
 select {
-  border: none; /* Бордер жок */
-  background: transparent; /* Фон жок (тунук) */
-  font-size: 16px; /* Шрифт өлчөмү */
-  font-weight: 500; /* Шрифт калыңдыгы */
-  outline: none; /* Фокус учурунда көк рамка чыкпайт */
-  appearance: none; /* Браузердин демейки стилдерин өчүрүү */
-  -webkit-appearance: none; /* Safari үчүн */
-  -moz-appearance: none; /* Firefox үчүн */
-  cursor: pointer; /* Кол тийгенде курсор өзгөрөт */
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  font-weight: 500;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
 }
 
-/* Кол тийгенде түс өзгөртүү */
 select:focus {
   background-color: #f5f5f5;
   border-radius: 6px;
 }
+
 .date-btn {
   border: none;
   background: transparent;
@@ -71,20 +84,22 @@ select:focus {
 .date-btn:hover {
   color: #3d91ff;
 }
+
 .peoples input {
-  display: grid;
+  display: block; /* оңдолду */
 }
+
 .podbtn {
   width: 168px;
   height: 40px;
   background-color: #ec1c24;
   border-radius: 30px;
-  color: white;
+  color: #fff;
   font-size: 16px;
   font-weight: 500;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center; /* оңдолду */
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -97,7 +112,7 @@ select:focus {
   top: 70px;
   left: 220px;
   z-index: 999;
-  background: white;
+  background: #fff;
   padding: 10px;
   border-radius: 8px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
@@ -106,7 +121,73 @@ select:focus {
 .calendar-modal.show {
   display: block;
 }
-.turis{
+
+.turis {
   width: 80px;
   font-size: 16px;
+}
+
+/* ============================= */
+/* Планшет (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .info-baner h2 {
+    font-size: 60px;
+    line-height: 70px;
+  }
+  .info-baner p {
+    font-size: 20px;
+  }
+  .box2 {
+    width: 90%;
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+/* ============================= */
+/* Мобилдик (480px - 768px) */
+@media (min-width: 480px) and (max-width: 768px) {
+  .info-baner h2 {
+    font-size: 40px;
+    line-height: 50px;
+  }
+  .info-baner p {
+    font-size: 16px;
+  }
+  .box2 {
+    width: 95%;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+  }
+  .podbtn {
+    width: 100%;
+  }
+}
+
+/* ============================= */
+/* Өтө кичине (≤479px) */
+@media (max-width: 479px) {
+  .banerimg {
+    width: 100%; /* оңдолду */
+    height: auto;
+  }
+  .info-baner h2 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+  .info-baner p {
+    font-size: 14px;
+  }
+  .box2 {
+    width: 100%;
+    flex-direction: column;
+    padding: 10px;
+    gap: 8px;
+  }
+  .podbtn {
+    width: 100%;
+    height: 35px;
+    font-size: 14px;
+  }
 }

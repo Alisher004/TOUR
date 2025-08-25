@@ -1,13 +1,58 @@
- .slick-arrow{
-    background: black;
-    border-radius: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding:2px 0 0;
-    width: 30px;
-    height: 30px;
+.slick-arrow {
+  background: black;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  outline: none;
+  padding: 2px 0 0;
 }
-.slick-arrow:hover{
-    background-color: black;
+
+.slick-arrow:hover {
+  background-color: #333;
+  transform: scale(1.1);
 }
+
+/* Планшет */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .slick-arrow {
+    width: 25px;
+    height: 25px;
+    padding: 1px 0 0;
+  }
+}
+
+/* Мобилдик */
+@media (min-width: 480px) and (max-width: 768px) {
+  .slick-arrow {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+  }
+}
+
+/* Өтө кичинекей */
+@media (max-width: 479px) {
+  .slick-arrow {
+    width: 18px;
+    height: 18px;
+    padding: 0;
+  }
+}
+
+/* Чоң экрандардагы стрелка жана масштаб эффект */
+.slick-slide > div {
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+  .slick-slide > div {
+    transform: scale(1) !important;
+    z-index: 1 !important;
+  }

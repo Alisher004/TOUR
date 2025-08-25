@@ -38,17 +38,17 @@ const newsData = [
 
 export default function NewsSection() {
   return (
-    <section className="news-section container" style={{ marginTop: "100px", marginBottom: "100px" }}>
+    <section className="news-section container">
       <h2 className="title">НОВОСТИ</h2>
       <p className="subtitle">СОБЫТИЯ В МИРЕ ТУРИЗМА</p>
 
       <div className="news-grid">
-        {newsData.map((item, i) => (
+        {newsData.map((item) => (
           <div
-            key={i}
+            key={item.title}
             className={`news-card ${item.size === "large" ? "large" : ""}`}
           >
-            <img src={item.image} alt={item.title} />
+            <img src={item.image} alt={`Новость: ${item.title}`} />
             <div className="overlay">
               <h3>{item.title}</h3>
               <button>читать ➝</button>

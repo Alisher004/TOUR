@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React from "react";
 
 const REVIEWS = [
   { id: 1, name: "Мария С. из Москвы", text: "Невероятное путешествие! Спасибо за организацию моей поездки в Париж. Все было просто идеально - от отелей до экскурсий. Не могу дождаться следующего приключения с вашей турфирмой", rating: 5 },
@@ -14,18 +14,16 @@ const REVIEWS = [
 ];
 
 function Stars({ value }) {
-  return (
-    <span style={{ color: "#EC1C24" }}>{"★".repeat(value) + "☆".repeat(5 - value)}</span>
-  );
+  return <span style={{ color: "#EC1C24" }}>{"★".repeat(value) + "☆".repeat(5 - value)}</span>;
 }
 
 export default function Reviews() {
-  const items = useMemo(() => REVIEWS, []);
+  const items = REVIEWS;
   const durationSec = Math.max(20, items.length * 6);
 
   return (
-    <div className="container" style={{ marginTop: "100px", marginBottom: "100px" }}>
-      <h2 style={{ fontWeight: 700, fontSize: 24, marginBottom: 12 }}>Отзывы</h2>
+    <div className="container reviews-section">
+      <h2>Отзывы</h2>
 
       <div className="reviews-marquee">
         <div
@@ -34,8 +32,10 @@ export default function Reviews() {
         >
           {[...items, ...items].map((r, idx) => (
             <div className="review-card" key={`${r.id}-${idx}`}>
+              <div className="review-top">
                 <Stars value={r.rating} />
                 <strong>{r.name}</strong>
+              </div>
               <p className="review-text">{r.text}</p>
             </div>
           ))}
@@ -43,51 +43,18 @@ export default function Reviews() {
       </div>
 
       <style>{`
-        .reviews-marquee {
-          overflow: hidden;
-          position: relative;
-        }
-        .marquee-track {
-          display: flex;
-          align-items: stretch;
-          gap: 12px;
-          width: max-content;
-          animation-name: reviews-scroll-left;
-          animation-timing-function: linear;
-          animation-iteration-count: infinite;
-          will-change: transform;
-        }
-        @keyframes reviews-scroll-left {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-        .review-card {
-          min-width: 280px;
-          max-width: 320px;
-          border: 1px solid #eee;
-          border-radius: 10px;
-          padding: 16px;
-          background: #F8F8F8;
-          box-shadow: 0 3px 10px rgba(0,0,0,0.04);
-          display: flex;
-          flex-direction: column;
-        }
-        .review-top {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          margin-bottom: 8px;
-        }
-        .review-text {
-          margin: 0;
-          color: #374151;
-          line-height: 1.5;
-          text-align: left;
-        }
-        @media (max-width: 768px) {
-          .review-card { min-width: 240px; }
-        }
+        .reviews-section { margin: 100px auto; }
+        .reviews-section h2 { font-weight: 700; font-size: 24px; margin-bottom: 12px; }
+        .reviews-marquee { overflow: hidden; position: relative; }
+        .marquee-track { display: flex; gap: 12px; width: max-content; animation-name: reviews-scroll-left; animation-timing-function: linear; animation-iteration-count: infinite; will-change: transform; }
+        @keyframes reviews-scroll-left { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .review-card { min-width: 280px; max-width: 320px; border: 1px solid #eee; border-radius: 10px; padding: 16px; background: #F8F8F8; box-shadow: 0 3px 10px rgba(0,0,0,0.04); display: flex; flex-direction: column; }
+        .review-top { display: flex; justify-content: space-between; margin-bottom: 8px; align-items: center; }
+        .review-text { margin: 0; color: #374151; line-height: 1.5; text-align: left; }
+        @media (min-width: 769px) and (max-width: 1024px) { .review-card { min-width: 240px; } .reviews-marquee { padding: 0 10px; } }
+        @media (min-width: 480px) and (max-width: 768px) { .review-card { min-width: 200px; } .review-text { font-size: 14px; } }
+        @media (max-width: 479px) { .review-card { min-width: 180px; } .review-text { font-size: 12px; } }
       `}</style>
     </div>
   );
-} 
+}

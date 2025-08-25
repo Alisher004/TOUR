@@ -2,6 +2,7 @@
 .about-us {
   font-family: sans-serif;
   color: #111;
+  padding: 0 20px;
 }
 
 .about-header {
@@ -30,6 +31,8 @@
   display: flex;
   gap: 40px;
   margin-bottom: 40px;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .about-text {
@@ -38,26 +41,30 @@
   line-height: 26px;
 }
 
-.large-letter p{
-  font-size: 16px;
-  margin-top: 20px;
-}
-.span{
+.large-letter span {
   font-size: 85px;
   padding: 0;
 }
-.text-flex{
+
+.large-letter p {
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.text-flex {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   margin-top: 30px;
 }
-.about-image{
-  width: 50%;
 
+.about-image {
+  width: 50%;
 }
+
 .about-image img {
   width: 100%;
   border-radius: 12px;
+  object-fit: cover;
 }
 
 .about-extra {
@@ -65,19 +72,26 @@
   margin-bottom: 40px;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
-.extra-image{
-  width: 400px;
+
+.extra-image {
+  max-width: 400px;
+  flex: 1;
 }
+
 .extra-image img {
   width: 100%;
   border-radius: 12px;
+  object-fit: cover;
 }
 
 .about-extra p {
-  width: 350px;
+  max-width: 350px;
   text-align: left;
   line-height: 26px;
+  flex: 1;
 }
 
 .about-footer {
@@ -88,6 +102,8 @@
   padding-top: 20px;
   font-size: 14px;
   line-height: 30px;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
 .social-icons span {
@@ -95,4 +111,142 @@
   padding: 6px 10px;
   background-color: #eee;
   border-radius: 50%;
+  display: inline-block;
+}
+
+/* Планшет (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .about-main {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .about-text {
+    width: 100%;
+  }
+
+  .about-image {
+    width: 100%;
+  }
+
+  .about-extra {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .extra-image {
+    width: 100%;
+  }
+
+  .about-extra p {
+    width: 100%;
+  }
+
+  .about-header .subtitle {
+    font-size: 24px;
+  }
+
+  .about-header h2 {
+    font-size: 28px;
+  }
+
+  .about-header .tagline {
+    font-size: 14px;
+  }
+}
+
+/* Мобилдик (480px - 768px) */
+@media (min-width: 480px) and (max-width: 768px) {
+  .about-header {
+    margin: 30px 0;
+  }
+
+  .about-header .subtitle {
+    font-size: 20px;
+  }
+
+  .about-header h2 {
+    font-size: 24px;
+  }
+
+  .about-header .tagline {
+    font-size: 12px;
+  }
+
+  .about-main {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .about-text {
+    width: 100%;
+    text-align: center;
+  }
+
+  .about-image {
+    width: 100%;
+  }
+
+  .about-extra {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .extra-image {
+    width: 100%;
+  }
+
+  .about-footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+}
+
+/* Өтө кичинекей (max-width: 479px) */
+@media (max-width: 479px) {
+  .about-header {
+    margin: 20px 0;
+  }
+
+  .about-header .subtitle {
+    font-size: 18px;
+  }
+
+  .about-header h2 {
+    font-size: 20px;
+  }
+
+  .about-header .tagline {
+    font-size: 12px;
+  }
+
+  .about-main {
+    gap: 10px;
+  }
+
+  .about-text {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .about-extra {
+    gap: 10px;
+  }
+
+  .about-extra p {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .about-footer {
+    font-size: 12px;
+    line-height: 20px;
+    gap: 10px;
+  }
+
+  .social-icons span {
+    padding: 4px 8px;
+  }
 }

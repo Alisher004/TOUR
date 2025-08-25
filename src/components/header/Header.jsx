@@ -8,10 +8,10 @@ import strelka from "../../assets/strelka.svg";
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false); // Заявка статусу
-  const [formData, setFormData] = useState({ name: "", phone: "" })
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [formData, setFormData] = useState({ name: "", phone: "" });
   const [showPhonePopup, setShowPhonePopup] = useState(false);
-  const [showLocationPopup, setShowLocationPopup] = useState(false);;
+  const [showLocationPopup, setShowLocationPopup] = useState(false);
   const [copied, setCopied] = useState(false);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
@@ -19,7 +19,7 @@ function Header() {
 
   const openModal = () => {
     setIsModalOpen(true);
-    setIsSuccess(false); // жаңы ачканда текстти тазалайбыз
+    setIsSuccess(false);
   };
   const closeModal = () => setIsModalOpen(false);
 
@@ -30,15 +30,11 @@ function Header() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Форма тазаланып, текст чыгат
     setFormData({ name: "", phone: "" });
     setIsSuccess(true);
-
-    // 3 секунддан кийин текст өчөт жана модал жабылат
     setTimeout(() => {
       setIsSuccess(false);
-      setIsModalOpen(false); // модалды жабабыз
+      setIsModalOpen(false);
     }, 3000);
   };
 
@@ -50,47 +46,30 @@ function Header() {
   };
 
   return (
-    <div className="header">
+    <header className="header">
       <div className="container">
         <div className="info-header">
           <a href="/" onClick={closeMenu}>
             <img src={logo} alt="" className="hlogo" />
           </a>
+
+          {/* Навигация */}
           <ul className={`navigation ${isMenuOpen ? "active" : ""}`}>
-            <li>
-              <a href="/tour-selection" onClick={closeMenu}>
-                Подбор тура
-              </a>
-            </li>
-            <li>
-              <a href="/tours" onClick={closeMenu}>
-                Горящие туры
-              </a>
-            </li>
-            <li>
-              <a href="/countries" onClick={closeMenu}>
-                Страны
-              </a>
-            </li>
-            <li>
-              <a href="/hotels" onClick={closeMenu}>
-                Отели
-              </a>
-            </li>
-            <li>
-              <a href="/about" onClick={closeMenu}>
-                О нас
-              </a>
-            </li>
+            <li><a href="/tour-selection" onClick={closeMenu}>Подбор тура</a></li>
+            <li><a href="/tours" onClick={closeMenu}>Горящие туры</a></li>
+            <li className="hide-on-medium"><a href="/countries" onClick={closeMenu}>Страны</a></li>
+            <li className="hide-on-medium"><a href="/hotels" onClick={closeMenu}>Отели</a></li>
+            <li><a href="/about" onClick={closeMenu}>О нас</a></li>
           </ul>
+
           <div className="icons">
             <button onClick={openModal}>оставить заявку</button>
+
             {/* Phone Icon */}
-            <div style={{ position: "relative", display: "inline-block" }}>
+            <div style={{ position: "relative" }}>
               <img
                 src={phone}
                 alt=""
-                style={{ cursor: "pointer" }}
                 onClick={() => {
                   setShowPhonePopup(!showPhonePopup);
                   setShowLocationPopup(false);
@@ -98,23 +77,17 @@ function Header() {
               />
               {showPhonePopup && (
                 <div className="popup">
-                  <p
-                    onClick={() => handleCopy("+996 555 123 456")}
-                    style={{ cursor: "pointer", margin: 0 }}
-                  >
-                    📞 +996 555 123 456
-                  </p>
+                  <p onClick={() => handleCopy("+996 555 123 456")}>📞 +996 555 123 456</p>
                   {copied && <small style={{ color: "green" }}>Скопировано!</small>}
                 </div>
               )}
             </div>
-            
+
             {/* Location Icon */}
-            <div style={{ position: "relative", display: "inline-block" }}>
+            <div style={{ position: "relative" }}>
               <img
                 src={location}
                 alt=""
-                style={{ cursor: "pointer" }}
                 onClick={() => {
                   setShowLocationPopup(!showLocationPopup);
                   setShowPhonePopup(false);
@@ -122,7 +95,7 @@ function Header() {
               />
               {showLocationPopup && (
                 <div className="popup">
-                  <p style={{ margin: 0 }}>📍 Бишкек, Турусбекова 109/1</p>
+                  <p>📍 Бишкек, Турусбекова 109/1</p>
                 </div>
               )}
             </div>
@@ -136,13 +109,11 @@ function Header() {
         </div>
       </div>
 
+      {/* Modal */}
       {isModalOpen && (
         <div className="modal">
           <div className="modal-content">
-            <button className="close-button" onClick={closeModal}>
-              X
-            </button>
-            <br />
+            <button className="close-button" onClick={closeModal}>X</button>
             <h1>Перезвонить вам?</h1>
             <p>Оставьте свой номер и наш специалист свяжется с вами</p>
 
@@ -169,16 +140,12 @@ function Header() {
                 </button>
               </form>
             ) : (
-              <h1
-                style={{ color: "green", fontSize: "24px", marginTop: "20px" }}
-              >
-                ✅ Заявка отправлена!
-              </h1>
+              <h1 className="success-text">✅ Заявка отправлена!</h1>
             )}
           </div>
         </div>
       )}
-    </div>
+    </header>
   );
 }
 

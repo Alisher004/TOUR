@@ -15,13 +15,13 @@
 .offer-count {
   font-size: 16px;
   color: #7f8c8d;
-  font-weight: normal;
 }
 
 .sort-filter-container {
   display: flex;
   gap: 40px;
   margin-bottom: 30px;
+  flex-wrap: wrap;
 }
 
 .sorting {
@@ -44,7 +44,7 @@
   background-color: white;
   padding: 15px;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .filter-section h3 {
@@ -89,22 +89,20 @@
   background-color: white;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   transition: transform 0.2s, box-shadow 0.2s;
-  text-align: left;
 }
 
 .hotel-image {
   position: relative;
-  min-height: 250px;
   width: 35%;
+  min-height: 250px;
 }
 
 .hotel-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
 
 .hotel-info {
@@ -195,7 +193,7 @@
   padding: 25px;
   display: flex;
   flex-direction: column;
-  align-items: end;
+  align-items: flex-end;
   justify-content: space-between;
 }
 
@@ -222,62 +220,32 @@
   cursor: pointer;
   font-weight: bold;
   font-size: 15px;
-  transition: background-color 0.2s;
   width: 100%;
+  transition: background-color 0.2s;
 }
 
 .details-btn:hover {
   background-color: #2980b9;
 }
 
-@media (max-width: 968px) {
-  .hotel-card {
-    flex-direction: column;
-  }
-
-  .hotel-info {
-    border-right: none;
-    border-bottom: 1px solid #eaeaea;
-  }
-
-  .sort-filter-container {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .hotel-image {
-    min-height: 200px;
-  }
-}
-
-@media (max-width: 576px) {
-  .hotel-listings {
-    padding: 15px;
-  }
-
-  .rating-container {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-  }
-}
-.done{
+.done {
   width: 20px;
   height: 20px;
   margin-right: 5px;
 }
-.features ul{
+
+.features ul {
   padding: 0;
 }
 
-
+/* Модал */
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0,0,0,0.4);
   backdrop-filter: blur(3px);
   display: flex;
   justify-content: center;
@@ -292,7 +260,7 @@
   border-radius: 16px;
   width: 420px;
   max-width: 90%;
-  box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 8px 30px rgba(0,0,0,0.2);
   display: flex;
   flex-direction: column;
   transform: translateY(-20px);
@@ -349,4 +317,30 @@
 @keyframes slideIn {
   from { opacity: 0; transform: translateY(-40px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* Адаптация: Планшет (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hotel-card { flex-direction: column; }
+  .hotel-info { border-right: none; border-bottom: 1px solid #eaeaea; }
+  .sort-filter-container { flex-direction: column; gap: 20px; }
+  .hotel-image { min-height: 200px; }
+}
+
+/* Адаптация: Мобил (480px - 768px) */
+@media (min-width: 480px) and (max-width: 768px) {
+  .hotel-listings { padding: 15px; }
+  .rating-container { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .hotel-card { flex-direction: column; }
+  .hotel-image { min-height: 180px; }
+  .details-btn { font-size: 14px; padding: 10px 20px; }
+}
+
+/* Адаптация: Өтө кичинекей (≤479px) */
+@media (max-width: 479px) {
+  .hotel-listings { padding: 10px; }
+  .rating-container { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .hotel-card { flex-direction: column; }
+  .hotel-image { min-height: 150px; }
+  .details-btn { font-size: 12px; padding: 8px 16px; }
 }

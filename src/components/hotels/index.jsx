@@ -5,13 +5,9 @@ import "slick-carousel/slick/slick-theme.css";
 import { hotels } from "../../data/hotels";
 import "./style.css";
 
-function computeCircularDistance(a, b, length) {
-  const diff = Math.abs(a - b);
-  return Math.min(diff, length - diff);
-}
-
 export default function HotelsCom() {
   const [current, setCurrent] = useState(0);
+
   const items = useMemo(() => {
     const list = [...hotels, ...hotels];
     return list.slice(0, Math.max(10, list.length));
@@ -21,31 +17,35 @@ export default function HotelsCom() {
     infinite: true,
     centerMode: true,
     centerPadding: "0px",
-    slidesToShow: 5,
+    slidesToShow: 5, // Default чоң экрандар үчүн
     speed: 400,
     arrows: true,
     dots: false,
     focusOnSelect: true,
     beforeChange: (_old, next) => setCurrent(next),
     responsive: [
-      { breakpoint: 1024, settings: { slidesToShow: 5 } },
-      { breakpoint: 900, settings: { slidesToShow: 5 } },
-      { breakpoint: 768, settings: { slidesToShow: 3 } },
-      { breakpoint: 480, settings: { slidesToShow: 1 } },
+      {
+        breakpoint: 1024,
+        settings: { slidesToShow: 3, arrows: true } // планшет
+      },
+      {
+        breakpoint: 768,
+        settings: { slidesToShow: 1, arrows: false } // мобилде стрелка жок
+      },
     ],
   };
 
   return (
     <div className="container" style={{ margin: "100px auto" }}>
-      <h2 style={{ textAlign: "center", marginBottom: 12 }}>
-        Популярные Отели
-      </h2>
-      <p>уют и роскошь в лучших отелях мира</p>
+      <h2 style={{ textAlign: "center", marginBottom: 12 }}>Популярные Отели</h2>
+      <p style={{ textAlign: "center", marginBottom: 24 }}>уют и роскошь в лучших отелях мира</p>
       <Slider {...settings}>
         {items.map((hotel, idx) => {
-          const d = computeCircularDistance(idx, current, items.length);
-          const scale = d === 0 ? 1 : d === 1 ? 0.85 : d === 2 ? 0.7 : 0.6;
-          const zIndex = d === 0 ? 30 : d === 1 ? 20 : 10;
+          const isLargeScreen = window.innerWidth > 768;
+          const d = isLargeScreen ? Math.min(Math.abs(idx - current), items.length - Math.abs(idx - current)) : 0;
+          const scale = isLargeScreen ? (d === 0 ? 1 : d === 1 ? 0.85 : d === 2 ? 0.7 : 0.6) : 1;
+          const zIndex = isLargeScreen ? (d === 0 ? 30 : d === 1 ? 20 : 10) : 1;
+
           return (
             <div key={`${hotel.id}-${idx}`}>
               <div
@@ -53,8 +53,7 @@ export default function HotelsCom() {
                   height: 280,
                   margin: "16px 8px",
                   transform: `scale(${scale})`,
-                  transformOrigin: "center center",
-                  transition: "transform 300ms ease",
+                  transition: "transform 0.3s ease",
                   position: "relative",
                   borderRadius: 12,
                   overflow: "hidden",
@@ -77,12 +76,8 @@ export default function HotelsCom() {
                 >
                   <img
                     src={hotel.thumbnail}
-                    alt={hotel.title}
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                    }}
+                    alt={hotel.name}
+                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
                   />
                 </div>
 
