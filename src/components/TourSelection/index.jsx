@@ -8,7 +8,9 @@ import p6 from "../../assets/p6.png";
 import p7 from "../../assets/p7.png";
 import hotel4 from "../../assets/hotel4.png";
 import done from "../../assets/done.png";
+import baner2 from "../../assets/baner2.png";
 import "./style.css";
+import Baner from "../Baner";
 
 const HotelListings = () => {
   const [sortBy, setSortBy] = useState("recommendations");
@@ -235,6 +237,12 @@ const HotelListings = () => {
   });
 
   return (
+    <div>
+        <Baner
+        image={baner2}
+        title="Подбор тура"
+        subtitle="Идеальное путешествие начинается здесь"
+      />
     <div className="hotel-listings">
       <header className="listings-header">
         <h1>
@@ -422,6 +430,7 @@ const HotelListings = () => {
           </div>
         ))}
       </div>
+    </div>
     </div>
   );
 };

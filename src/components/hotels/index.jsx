@@ -10,7 +10,7 @@ function computeCircularDistance(a, b, length) {
   return Math.min(diff, length - diff);
 }
 
-export default function Hotels() {
+export default function HotelsCom() {
   const [current, setCurrent] = useState(0);
   const items = useMemo(() => {
     const list = [...hotels, ...hotels];

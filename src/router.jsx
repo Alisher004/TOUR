@@ -8,7 +8,7 @@ import Countries from "./pages/Countries";
 import Booking from "./pages/Booking";
 import About from "./pages/About";
 import Contacts from "./pages/Contacts";
-import Hotels from "./components/hotels";
+import Hotels from "./pages/Hotels";
 import TourSelection from "./components/TourSelection";
 
 export const myRouter = createBrowserRouter([

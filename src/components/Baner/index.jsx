@@ -2,11 +2,10 @@ import React, { useState } from "react";
 import { DateRange } from "react-date-range";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
-import banerimg from "../../assets/baner.png";
 import strelka from "../../assets/strelka.svg";
 import "./style.css";
 
-function Baner() {
+function Baner({ image, title, subtitle }) {
   const [openCalendar, setOpenCalendar] = useState(false);
   const [range, setRange] = useState([
     {
@@ -18,13 +17,13 @@ function Baner() {
 
   return (
     <div className="baner">
-      <img src={banerimg} alt="" className="banerimg" loading="lazy"/>
+      <img src={image} alt="" className="banerimg" loading="lazy" />
       <div className="info-baner">
-        <h2>Путешествия мечты</h2>
-        <p>выбери свою</p>
+      <h2>{title}</h2>
+      <p>{subtitle}</p>
 
         <form action="">
-          <div className="box2">
+          <div className="box2">  
             <div className="select">
               <label>Oткуда</label>
               <select>
