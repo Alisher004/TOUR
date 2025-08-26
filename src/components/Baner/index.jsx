@@ -7,6 +7,8 @@ import "./style.css";
 
 function Baner({ image, title, subtitle }) {
   const [openCalendar, setOpenCalendar] = useState(false);
+  const [showPopup, setShowPopup] = useState(false); // Popup абалы
+
   const [range, setRange] = useState([
     {
       startDate: new Date(),
@@ -19,11 +21,11 @@ function Baner({ image, title, subtitle }) {
     <div className="baner">
       <img src={image} alt="" className="banerimg" loading="lazy" />
       <div className="info-baner">
-      <h2>{title}</h2>
-      <p>{subtitle}</p>
+        <h2>{title}</h2>
+        <p>{subtitle}</p>
 
         <form action="">
-          <div className="box2">  
+          <div className="box2">
             <div className="select">
               <label>Oткуда</label>
               <select>
@@ -103,14 +105,33 @@ function Baner({ image, title, subtitle }) {
 
             <div className="peoples">
               <label htmlFor="">Туристы</label>
-              <input type="number" placeholder="люди" className="turis"/>
+              <input type="number" placeholder="люди" className="turis" />
             </div>
-            <button className="podbtn">
+
+            {/* Подобрать кнопка */}
+            <button
+              type="button"
+              className="podbtn"
+              onClick={() => setShowPopup(true)}
+            >
               подобрать <img src={strelka} alt="" />
             </button>
           </div>
         </form>
       </div>
+
+      {/* Popup */}
+      {showPopup && (
+        <div className="popup-overlay">
+          <div className="popup-box">
+            <p>
+              Сиздин заявка кабыл алынды ✅ <br />
+              Тез арада биздин менеджерлер сиз менен байланышат.
+            </p>
+            <button onClick={() => setShowPopup(false)}>Ок</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

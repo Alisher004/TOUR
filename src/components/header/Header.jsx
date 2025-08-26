@@ -55,15 +55,76 @@ function Header() {
 
           {/* Навигация */}
           <ul className={`navigation ${isMenuOpen ? "active" : ""}`}>
-            <li><a href="/tour-selection" onClick={closeMenu}>Подбор тура</a></li>
-            <li><a href="/tours" onClick={closeMenu}>Горящие туры</a></li>
-            <li className="hide-on-medium"><a href="/countries" onClick={closeMenu}>Страны</a></li>
-            <li className="hide-on-medium"><a href="/hotels" onClick={closeMenu}>Отели</a></li>
-            <li><a href="/about" onClick={closeMenu}>О нас</a></li>
+            <li>
+              <a href="/tour-selection" onClick={closeMenu}>
+                Подбор тура
+              </a>
+            </li>
+            <li>
+              <a href="/tours" onClick={closeMenu}>
+                Горящие туры
+              </a>
+            </li>
+            <li className="hide-on-medium">
+              <a href="/countries" onClick={closeMenu}>
+                Страны
+              </a>
+            </li>
+            <li className="hide-on-medium">
+              <a href="/hotels" onClick={closeMenu}>
+                Отели
+              </a>
+            </li>
+            <li>
+              <a href="/about" onClick={closeMenu}>
+                О нас
+              </a>
+            </li>
           </ul>
 
           <div className="icons">
-            <button onClick={openModal}>оставить заявку</button>
+            <div className="btnwrapper">
+              <button onClick={openModal}>оставить заявку</button>
+
+              {/* Modal */}
+              {isModalOpen && (
+                <div className="h-modal">
+                  <div className="h-modal-content">
+                    <button className="hclose-button" onClick={closeModal}>
+                      X
+                    </button>
+                    <h1>Перезвонить вам?</h1>
+                    <p>Оставьте свой номер и наш специалист свяжется с вами</p>
+
+                    {!isSuccess ? (
+                      <form onSubmit={handleSubmit}>
+                        <input
+                          type="text"
+                          name="name"
+                          placeholder="Ваше имя"
+                          value={formData.name}
+                          onChange={handleInputChange}
+                          required
+                        />
+                        <input
+                          type="tel"
+                          name="phone"
+                          placeholder="Ваш телефон"
+                          value={formData.phone}
+                          onChange={handleInputChange}
+                          required
+                        />
+                        <button type="submit" className="submit">
+                          Отправить <img src={strelka} alt="" />
+                        </button>
+                      </form>
+                    ) : (
+                      <h1 className="success-text">✅ Заявка отправлена!</h1>
+                    )}
+                  </div>
+                </div>
+              )}
+            </div>
 
             {/* Phone Icon */}
             <div style={{ position: "relative" }}>
@@ -77,8 +138,12 @@ function Header() {
               />
               {showPhonePopup && (
                 <div className="popup">
-                  <p onClick={() => handleCopy("+996 555 123 456")}>📞 +996 555 123 456</p>
-                  {copied && <small style={{ color: "green" }}>Скопировано!</small>}
+                  <p onClick={() => handleCopy("+996 555 123 456")}>
+                    📞 +996 555 123 456
+                  </p>
+                  {copied && (
+                    <small style={{ color: "green" }}>Скопировано!</small>
+                  )}
                 </div>
               )}
             </div>
@@ -108,43 +173,6 @@ function Header() {
           </div>
         </div>
       </div>
-
-      {/* Modal */}
-      {isModalOpen && (
-        <div className="modal">
-          <div className="modal-content">
-            <button className="close-button" onClick={closeModal}>X</button>
-            <h1>Перезвонить вам?</h1>
-            <p>Оставьте свой номер и наш специалист свяжется с вами</p>
-
-            {!isSuccess ? (
-              <form onSubmit={handleSubmit}>
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Ваше имя"
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  required
-                />
-                <input
-                  type="tel"
-                  name="phone"
-                  placeholder="Ваш телефон"
-                  value={formData.phone}
-                  onChange={handleInputChange}
-                  required
-                />
-                <button type="submit" className="submit">
-                  Отправить <img src={strelka} alt="" />
-                </button>
-              </form>
-            ) : (
-              <h1 className="success-text">✅ Заявка отправлена!</h1>
-            )}
-          </div>
-        </div>
-      )}
     </header>
   );
 }

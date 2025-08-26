@@ -20,7 +20,7 @@ function Footer() {
           <div className="box">
             <h3>МЫ ПОМОЖЕМ СОЗДАТЬ ВАШЕ ПУТЕШЕСТВИЕ</h3>
             <p>Оставьте заявку на подбор идеального путешествия</p>
-            <div>
+            <div className="noname">
               <input type="text" placeholder="Имя" required /> <hr />
               <input type="text" placeholder="Телефон" required /> <hr />
             </div>
@@ -31,6 +31,7 @@ function Footer() {
           </div>
         </form>
       </div>
+      
       <div className="fbottom">
         <div className="container">
           <div className="footer-top">
