@@ -21,7 +21,6 @@
   }
 }
 
-/* Мобилдик */
 @media (min-width: 480px) and (max-width: 768px) {
   .slick-arrow {
     width: 20px;
