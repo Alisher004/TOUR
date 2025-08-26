@@ -1,22 +1,17 @@
 .slick-arrow {
   background: black;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  outline: none;
-  padding: 2px 0 0;
+  position: absolute;
+  top: 50%;
 }
-
-.slick-arrow:hover {
-  background-color: #333;
-  transform: scale(1.1);
+.slick-prev{
+  left: 10px;
 }
-
+.slick-next{
+  right: 10px;
+}
+.slick-arrow:hover{
+  background-color: black;
+}
 /* Планшет */
 @media (min-width: 769px) and (max-width: 1024px) {
   .slick-arrow {

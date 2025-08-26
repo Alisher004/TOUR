@@ -1,8 +1,7 @@
 .baner {
   position: relative;
   width: 100%;
-  max-height: 600px; /* сүрөт чоноюп кетпеши үчүн чектөө */
-  overflow: hidden;
+  height: auto; /* сүрөт чоноюп кетпеши үчүн чектөө */
   margin-top: 60px;
 }
 
@@ -48,6 +47,7 @@
   padding: 10px 20px;
   text-align: left;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  z-index: 9;
 }
 
 .select {
@@ -125,11 +125,76 @@ select:focus {
 .turis {
   width: 80px;
   font-size: 16px;
+  border: none;
 }
+
+
+
+/* Popup фон */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* Popup терезе */
+.popup-box {
+  background: #fff;
+  padding: 24px;
+  border-radius: 16px;
+  text-align: center;
+  max-width: 320px;
+  width: 90%;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  animation: popupShow 0.3s ease;
+}
+
+/* Анимация */
+@keyframes popupShow {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Popup ичиндеги текст */
+.popup-box p {
+  font-size: 16px;
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+/* "Ок" кнопкасы */
+.popup-box button {
+  padding: 8px 16px;
+  background: #3b82f6;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.popup-box button:hover {
+  background: #2563eb;
+}
+
 
 /* ============================= */
 /* Планшет (769px - 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
+  .info-baner{
+    width: 90%;
+  }
   .info-baner h2 {
     font-size: 60px;
     line-height: 70px;
@@ -141,6 +206,7 @@ select:focus {
     font-size: 20px;
   }
   .box2 {
+    width: 90%;
   }
 }
 
