@@ -134,34 +134,62 @@ select:focus {
     font-size: 60px;
     line-height: 70px;
   }
+  .banerimg{
+    height: 600px;
+  }
   .info-baner p {
     font-size: 20px;
   }
   .box2 {
-    width: 90%;
-    flex-direction: column;
-    gap: 15px;
   }
 }
 
 /* ============================= */
 /* Мобилдик (480px - 768px) */
 @media (min-width: 480px) and (max-width: 768px) {
+  .banerimg{
+    height: 600px;
+  }
+  .info-baner{
+    top: 30%;
+  }
   .info-baner h2 {
     font-size: 40px;
-    line-height: 50px;
+    line-height: 40px;
   }
   .info-baner p {
     font-size: 16px;
   }
   .box2 {
-    width: 95%;
+    width: 300px;
+    height: 320px;
     flex-direction: column;
-    gap: 10px;
+    gap:0;
     padding: 15px;
+    top: -20px;
+    text-align: left;
   }
   .podbtn {
     width: 100%;
+  }
+  .select{
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+  }
+  label{
+    font-size: 12px;
+    color: #ccc;
+  }
+  .date-btn {
+    text-align: left;
+  }
+  .peoples{
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+  }
+  .turis{
+    border: none;
   }
 }
 
@@ -170,24 +198,50 @@ select:focus {
 @media (max-width: 479px) {
   .banerimg {
     width: 100%; /* оңдолду */
-    height: auto;
+    height: 650px;
+    object-fit: cover;
+  }
+  .info-baner{
+    top: 30%;
   }
   .info-baner h2 {
-    font-size: 28px;
+    font-size: 40px;
     line-height: 36px;
   }
   .info-baner p {
-    font-size: 14px;
+    font-size: 16px;
   }
   .box2 {
-    width: 100%;
+    width: 300px;
+    height: 320px;
     flex-direction: column;
-    padding: 10px;
+    padding: 16px;
     gap: 8px;
+    top: 0;
+    text-align: left;
   }
   .podbtn {
     width: 100%;
     height: 35px;
     font-size: 14px;
+  }
+  .select{
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+  }
+  label{
+    font-size: 12px;
+    color: #ccc;
+  }
+  .date-btn {
+    text-align: left;
+  }
+  .peoples{
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+  }
+  .turis{
+    border: none;
   }
 }
