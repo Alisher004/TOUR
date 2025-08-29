@@ -1,4 +1,5 @@
 import React from "react";
+import reviewsvg from "../../assets/review.png"
 
 const REVIEWS = [
   { id: 1, name: "Мария С. из Москвы", text: "Невероятное путешествие! Спасибо за организацию моей поездки в Париж. Все было просто идеально - от отелей до экскурсий. Не могу дождаться следующего приключения с вашей турфирмой", rating: 5 },
@@ -23,7 +24,9 @@ export default function Reviews() {
 
   return (
     <div className="container reviews-section">
+      <img src={reviewsvg} alt="" className="hsvg"/>
       <h2>Отзывы</h2>
+      <p>Впечатления наших путешественников</p>
 
       <div className="reviews-marquee">
         <div
@@ -32,7 +35,8 @@ export default function Reviews() {
         >
           {[...items, ...items].map((r, idx) => (
             <div className="review-card" key={`${r.id}-${idx}`}>
-              <div className="review-top">
+              <div className="review-top" style={{display: "flex", flexDirection: "column"}}>
+                <img width={50} src="https://cdn-icons-png.flaticon.com/512/10100/10100101.png" alt="" />
                 <Stars value={r.rating} />
                 <strong>{r.name}</strong>
               </div>
@@ -45,7 +49,7 @@ export default function Reviews() {
       <style>{`
         .reviews-section { margin: 100px auto; }
         .reviews-section h2 { font-weight: 700; font-size: 24px; margin-bottom: 12px; }
-        .reviews-marquee { overflow: hidden; position: relative; }
+        .reviews-marquee { overflow: hidden; position: relative; margin: 40px auto;}
         .marquee-track { display: flex; gap: 12px; width: max-content; animation-name: reviews-scroll-left; animation-timing-function: linear; animation-iteration-count: infinite; will-change: transform; }
         @keyframes reviews-scroll-left { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
         .review-card { min-width: 280px; max-width: 320px; border: 1px solid #eee; border-radius: 10px; padding: 16px; background: #F8F8F8; box-shadow: 0 3px 10px rgba(0,0,0,0.04); display: flex; flex-direction: column; }

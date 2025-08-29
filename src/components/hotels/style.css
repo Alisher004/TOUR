@@ -1,52 +1,143 @@
-.slick-arrow {
-  background: black;
-  position: absolute;
-  top: 50%;
+.carousel-container {
+  overflow: hidden;
+  width: 100%;
+  padding: 20px 0;
 }
-.slick-prev{
-  left: 10px;
+.carousel-container h1{
+  font-size: 44px;
+  font-weight: 500;
+  font-family: Roboto;
 }
-.slick-next{
-  right: 10px;
-}
-.slick-arrow:hover{
-  background-color: black;
-}
-/* Планшет */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .slick-arrow {
-    width: 25px;
-    height: 25px;
-    padding: 1px 0 0;
-  }
+.carousel-container p{
+  font-size: 24px;
+  font-weight: 300;
+  font-family: Roboto;
 }
 
-@media (min-width: 480px) and (max-width: 768px) {
-  .slick-arrow {
-    width: 20px;
-    height: 20px;
-    padding: 0;
-  }
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  animation: scroll 10s linear infinite;
+  margin: 40px auto;
 }
 
-/* Өтө кичинекей */
-@media (max-width: 479px) {
-  .slick-arrow {
-    width: 18px;
-    height: 18px;
-    padding: 0;
-  }
-}
-
-/* Чоң экрандардагы стрелка жана масштаб эффект */
-.slick-slide > div {
+.hotel-card {
+  position: relative;
+  width: 200px;
+  height: 300px;
   border-radius: 12px;
   overflow: hidden;
-  transition: transform 0.3s ease;
   cursor: pointer;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: transform 1s;
 }
 
-  .slick-slide > div {
-    transform: scale(1) !important;
-    z-index: 1 !important;
-  }
+/* Сүрөт толук фон */
+.hotel-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Overlay маалымат */
+.hotel-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  color: white;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  text-align: left;
+}
+
+.hotel-info h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+.hotel-info p {
+  margin: 3px 0;
+  font-size: 14px;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(-40%); }
+  100% { transform: translateX(0); }
+}
+
+/* Modal */
+.modal-overlay-hotel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999999;
+
+}
+.modal-hotel {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 400px;
+  max-width: 90%;
+}
+.modal-hotel h2 {
+  margin-bottom: 10px;
+}
+.modal-hotel form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.modal-hotel input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+.modal-hotel button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.modal-hotel button:hover {
+  background: #0056b3;
+}
+.success {
+  margin-top: 10px;
+  color: green;
+}
+.hsvg{
+  width: 172px;
+}
+.hotel-img{
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  object-fit: cover;
+  max-height: 250px;
+}
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: #333;
+  transition: color 0.2s;
+}
+
+.modal-close:hover {
+  color: #000;
+}

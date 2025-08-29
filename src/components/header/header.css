@@ -47,18 +47,18 @@
 .icons img { cursor: pointer; transition: transform 0.3s ease; }
 .icons img:hover { transform: scale(1.1); }
 
-.info-header button {
+.onclick{
   border: 1px solid #000;
   color: #000;
   border-radius: 100px;
   padding: 8px 15px;
-  background: transparent;
   cursor: pointer;
   font-size: 16px;
   transition: all 0.3s ease;
+  background: none;
 }
 
-.info-header button:hover { background: #000; color: #fff; }
+.onclick:hover{ background: #000; color: #fff; }
 
 .mobile-menu-toggle { display: none; flex-direction: column; cursor: pointer; }
 .mobile-menu-toggle span {
@@ -69,9 +69,6 @@
 /* ============================= */
 /* MODAL */
 /* ============================= */
-.btnwrapper{
-  position: relative;
-}
 .h-modal {
   position: fixed;
   top: 0;
@@ -132,7 +129,7 @@
 
 /* ============================= */
 /* SUBMIT BUTTON */
-.submit {
+.hsubmit {
   width: 100%;
   height: 40px;
   background: #ec1c24;
@@ -181,17 +178,20 @@
 }
 
 /* 768px - 1200px - 2 эле навигация көрүнөт */
-@media (max-width: 1200px) and (min-width: 768px) {
-  .navigation li:nth-child(n+3) { display: none; }
+@media (max-width: 1200px) and (min-width: 769px) {
+  .navigation li { display: none; }
   .mobile-menu-toggle { display: flex; }
   .icons button{
+    display: none;
+  }
+  .onclick{
     display: none;
   }
 }
 
 /* <768px - Толук мобилдик меню */
-@media (max-width: 767px) {
-  .icons button{
+@media (max-width: 768px) {
+  .onclick{
     display: none;
   }
   .mobile-menu-toggle { display: flex; }

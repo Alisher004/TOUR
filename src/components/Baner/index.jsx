@@ -123,10 +123,11 @@ function Baner({ image, title, subtitle }) {
       {/* Popup */}
       {showPopup && (
         <div className="popup-overlay">
+          <div className="fon"></div>
           <div className="popup-box">
             <p>
-              Сиздин заявка кабыл алынды ✅ <br />
-              Тез арада биздин менеджерлер сиз менен байланышат.
+              Ваша заявка принята ✅ <br />В ближайшее время наши менеджеры
+              свяжутся с вами.
             </p>
             <button onClick={() => setShowPopup(false)}>Ок</button>
           </div>

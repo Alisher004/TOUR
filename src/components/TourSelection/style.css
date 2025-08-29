@@ -10,6 +10,8 @@
   font-size: 24px;
   margin-bottom: 20px;
   color: #2c3e50;
+  margin-top: 100px;
+  text-align: left;
 }
 
 .offer-count {
@@ -21,7 +23,6 @@
   display: flex;
   gap: 40px;
   margin-bottom: 30px;
-  flex-wrap: wrap;
 }
 
 .sorting {
@@ -31,27 +32,26 @@
   gap: 10px;
 }
 
+.filter-btn {
+  background-color: white;
+  border-radius: 100px;
+  border: 1px solid #ccc;
+  padding: 10px 15px;
+  cursor: pointer;
+  width: 100px;
+  font-size: 16px;
+}
+.filter-btn:hover {
+  background-color: red;
+  color: white;
+}
+
 .sorting select {
   padding: 8px 12px;
   border: 1px solid #ddd;
   border-radius: 4px;
   background-color: white;
   font-size: 14px;
-}
-
-.filter-section {
-  flex: 1;
-  background-color: white;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.filter-section h3 {
-  margin-top: 0;
-  color: #2c3e50;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 10px;
 }
 
 .filter-group {
@@ -84,18 +84,19 @@
   gap: 20px;
 }
 
-.hotel-card {
+.hotel-card2 {
   display: flex;
   background-color: white;
   border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 12px rgba(1, 1, 1, 0.08);
   transition: transform 0.2s, box-shadow 0.2s;
+  width: 100%;
+  text-align: left;
 }
 
 .hotel-image {
   position: relative;
-  width: 35%;
+  width: 40%;
   min-height: 250px;
 }
 
@@ -103,15 +104,17 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-top-left-radius: 26px;
+  border-bottom-left-radius: 26px;
 }
 
-.hotel-info {
-  flex: 3;
+.hotel-info2 {
+  flex: 2;
   padding: 25px;
   border-right: 1px solid #eaeaea;
 }
 
-.location {
+.location2 {
   font-size: 14px;
   color: #7f8c8d;
   margin-bottom: 5px;
@@ -130,7 +133,7 @@
   margin-bottom: 15px;
 }
 
-.stars {
+.stars2 {
   color: #f39c12;
   font-size: 18px;
 }
@@ -150,12 +153,12 @@
   border-radius: 4px;
 }
 
-.reviews {
+.reviews2 {
   font-size: 14px;
   color: #7f8c8d;
 }
 
-.dates {
+.dates2 {
   margin-bottom: 10px;
   font-size: 15px;
   color: #34495e;
@@ -182,6 +185,7 @@
   padding-left: 20px;
   font-size: 14px;
   color: #555;
+  text-align: left;
 }
 
 .features li {
@@ -197,7 +201,7 @@
   justify-content: space-between;
 }
 
-.price {
+.hdprice {
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 5px;
@@ -245,7 +249,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(3px);
   display: flex;
   justify-content: center;
@@ -260,7 +264,7 @@
   border-radius: 16px;
   width: 420px;
   max-width: 90%;
-  box-shadow: 0px 8px 30px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
   transform: translateY(-20px);
@@ -295,7 +299,7 @@
 }
 
 .modal-footer button.confirm {
-  background: #4CAF50;
+  background: #4caf50;
   color: white;
 }
 
@@ -310,37 +314,243 @@
 
 /* Анимациялар */
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes slideIn {
-  from { opacity: 0; transform: translateY(-40px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Адаптация: Планшет (769px - 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
-  .hotel-card { flex-direction: column; }
-  .hotel-info { border-right: none; border-bottom: 1px solid #eaeaea; }
-  .sort-filter-container { flex-direction: column; gap: 20px; }
-  .hotel-image { min-height: 200px; }
+  .hotel-info2 {
+    border-right: none;
+    border-bottom: 1px solid #eaeaea;
+  }
+  .hotel-image {
+    min-height: 200px;
+  }
+  .hdprice{
+    font-size: 18px;
+  }
+  .period{
+    font-size: 18px;
+  }
 }
 
 /* Адаптация: Мобил (480px - 768px) */
 @media (min-width: 480px) and (max-width: 768px) {
-  .hotel-listings { padding: 15px; }
-  .rating-container { flex-direction: column; align-items: flex-start; gap: 8px; }
-  .hotel-card { flex-direction: column; }
-  .hotel-image { min-height: 180px; }
-  .details-btn { font-size: 14px; padding: 10px 20px; }
+  .hotel-listings {
+    padding: 15px;
+  }
+  .rating-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .hotel-card2 {
+    flex-direction: column;
+  }
+  .hotel-image {
+    width: 100%;
+  }
+  .hotel-image img{
+    border-top-left-radius: 26px;
+    border-top-right-radius: 26px;
+    border-bottom-left-radius: 0;
+  }
+  .details-btn {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+  .price-container{
+    display: inline-block;
+  }
 }
 
 /* Адаптация: Өтө кичинекей (≤479px) */
 @media (max-width: 479px) {
-  .hotel-listings { padding: 10px; }
-  .rating-container { flex-direction: column; align-items: flex-start; gap: 8px; }
-  .hotel-card { flex-direction: column; }
-  .hotel-image { min-height: 150px; }
-  .details-btn { font-size: 12px; padding: 8px 16px; }
+  .hotel-listings {
+    padding: 15px;
+  }
+  .rating-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .hotel-card2 {
+    flex-direction: column;
+  }
+  .hotel-image {
+    width: 100%;
+  }
+  .hotel-image img{
+    border-top-left-radius: 26px;
+    border-top-right-radius: 26px;
+    border-bottom-left-radius: 0;
+  }
+  .details-btn {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+  .price-container{
+    display: inline-block;
+  }
+}
+
+
+
+
+
+
+/* Модалдын үстүндөгү караңгы фон */
+.modal-overlay2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+/* Негизги модал терезе */
+.modal3 {
+  background: #fff;
+  border-radius: 12px;
+  width: 500px;
+  padding: 25px;
+  box-shadow: 0 4px 25px rgba(0,0,0,0.25);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Модал башы */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.modal-header h2 {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.modal-header button {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s ease;
+}
+
+.modal-header button:hover {
+  color: #000;
+}
+
+/* Модал контент */
+.modal-content3 {
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.modal-img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.modal-content3 p {
+  margin: 5px 0;
+  font-size: 15px;
+}
+
+.modal-content3 h4 {
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+/* Лист */
+.modal-content3 ul {
+  padding-left: 18px;
+  margin-bottom: 20px;
+}
+
+.modal-content3 li {
+  margin: 4px 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Done иконка */
+.done {
+  width: 16px;
+  height: 16px;
+}
+
+/* Бронь формасы */
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.booking-form h3 {
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+.booking-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  outline: none;
+  transition: border 0.2s ease;
+}
+
+.booking-form input:focus {
+  border-color: #007bff;
+}
+
+/* Кнопка */
+button[type="submit4"] {
+  background: #007bff;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button[type="submit4"]:hover {
+  background: #0056b3;
+}
+
+/* Анимация */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
 }
