@@ -20,7 +20,7 @@ export default function Tours() {
   };
 
   return (
-    <div style={{marginTop: "50px"}}>
+    <div>
     <div className="tours-container container">
       <h1>ГОРЯЩИЕ ТУРЫ</h1>
       <h4>Поймайте момент</h4>

@@ -1,8 +1,9 @@
 .baner {
   position: relative;
   width: 100%;
-  height: auto; /* сүрөт чоноюп кетпеши үчүн чектөө */
-  margin-top: 60px;
+  height: 800px; /* сүрөт чоноюп кетпеши үчүн чектөө */
+  /* overflow: hidden; */
+  margin-top: 20px;
 }
 
 .banerimg {
@@ -47,11 +48,11 @@
   padding: 10px 20px;
   text-align: left;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  z-index: 9;
 }
 
 .select {
   display: grid;
+  z-index: 999;
 }
 
 select {
@@ -127,100 +128,68 @@ select:focus {
   font-size: 16px;
   border: none;
 }
-
-
-
-/* Popup фон */
 .popup-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
 }
-
-/* Popup терезе */
 .popup-box {
-  background: #fff;
-  padding: 24px;
-  border-radius: 16px;
-  text-align: center;
-  max-width: 320px;
-  width: 90%;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  animation: popupShow 0.3s ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  z-index: 2;
+  padding: 10px;
+  border-radius: 10px;
+  line-height: 30px;
+  font-size: 20px;
+  width: 400px;
 }
-
-/* Анимация */
-@keyframes popupShow {
-  from {
-    transform: scale(0.8);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-/* Popup ичиндеги текст */
-.popup-box p {
-  font-size: 16px;
-  margin-bottom: 16px;
-  line-height: 1.4;
-}
-
-/* "Ок" кнопкасы */
 .popup-box button {
-  padding: 8px 16px;
-  background: #3b82f6;
-  color: #fff;
+  width: 200px;
+  font-size: 20px;
+  background-color: #ec1c24;
+  color: white;
   border: none;
-  border-radius: 8px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background 0.2s;
+  border-radius: 5px;
+  padding: 5px 0;
 }
-
-.popup-box button:hover {
-  background: #2563eb;
-}
-
 
 /* ============================= */
 /* Планшет (769px - 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
-  .info-baner{
-    width: 90%;
+  .baner {
+    height: auto;
+  }
+
+  .info-baner {
+    top: 45%;
+    padding: 0;
   }
   .info-baner h2 {
     font-size: 60px;
     line-height: 70px;
   }
-  .banerimg{
+  .banerimg {
     height: 600px;
   }
   .info-baner p {
     font-size: 20px;
   }
   .box2 {
-    width: 90%;
+    width: 760px;
   }
 }
 
 /* ============================= */
 /* Мобилдик (480px - 768px) */
 @media (min-width: 480px) and (max-width: 768px) {
-  .banerimg{
-    height: 600px;
+  .banerimg {
+    height: 100%;
   }
-  .info-baner{
-    top: 30%;
+  .info-baner {
+    top: 35%;
   }
   .info-baner h2 {
-    font-size: 40px;
+    font-size: 50px;
     line-height: 40px;
   }
   .info-baner p {
@@ -230,7 +199,7 @@ select:focus {
     width: 300px;
     height: 320px;
     flex-direction: column;
-    gap:0;
+    gap: 0;
     padding: 15px;
     top: -20px;
     text-align: left;
@@ -238,24 +207,29 @@ select:focus {
   .podbtn {
     width: 100%;
   }
-  .select{
+  .select {
     text-align: left;
     border-bottom: 1px solid #ccc;
     width: 100%;
   }
-  label{
+  label {
     font-size: 12px;
     color: #ccc;
   }
   .date-btn {
     text-align: left;
   }
-  .peoples{
+  .peoples {
     width: 100%;
     border-bottom: 1px solid #ccc;
   }
-  .turis{
+  .turis {
     border: none;
+  }
+
+  .calendar-modal {
+    left: -30px;
+    top: 200px;
   }
 }
 
@@ -264,10 +238,13 @@ select:focus {
 @media (max-width: 479px) {
   .banerimg {
     width: 100%; /* оңдолду */
-    height: 650px;
     object-fit: cover;
   }
-  .info-baner{
+  .calendar-modal {
+    left: -30px;
+    top: 200px;
+  }
+  .info-baner {
     top: 30%;
   }
   .info-baner h2 {
@@ -291,23 +268,23 @@ select:focus {
     height: 35px;
     font-size: 14px;
   }
-  .select{
+  .select {
     text-align: left;
     border-bottom: 1px solid #ccc;
     width: 100%;
   }
-  label{
+  label {
     font-size: 12px;
     color: #ccc;
   }
   .date-btn {
     text-align: left;
   }
-  .peoples{
+  .peoples {
     width: 100%;
     border-bottom: 1px solid #ccc;
   }
-  .turis{
+  .turis {
     border: none;
   }
 }

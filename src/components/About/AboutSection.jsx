@@ -9,12 +9,13 @@ import telegram from "../../assets/telegram.svg";
 import whatsapp from "../../assets/whatsapp.svg";
 import ok from "../../assets/ok.svg";
 import wk from "../../assets/wk.svg";
+import we from "../../assets/we.png";
 
 const AboutUs = () => {
   return (
-    <section className="about-us container">
+    <section className="about-us container" style={{margin: "100px auto 20px"}}>
       <div className="about-header">
-        <p className="subtitle">We</p>
+        <img src={we} alt="" className="hsvg"/>
         <h2>О НАС</h2>
         <p className="tagline">ВДОХНОВЛЯЕМ МИР НА ПУТЕШЕСТВИЯ</p>
       </div>

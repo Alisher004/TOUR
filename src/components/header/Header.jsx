@@ -84,7 +84,7 @@ function Header() {
 
           <div className="icons">
             <div className="btnwrapper">
-              <button onClick={openModal}>оставить заявку</button>
+              <button onClick={openModal} className="onclick">оставить заявку</button>
 
               {/* Modal */}
               {isModalOpen && (
@@ -114,7 +114,7 @@ function Header() {
                           onChange={handleInputChange}
                           required
                         />
-                        <button type="submit" className="submit">
+                        <button type="submit" className="hsubmit">
                           Отправить <img src={strelka} alt="" />
                         </button>
                       </form>
