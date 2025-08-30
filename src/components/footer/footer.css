@@ -88,19 +88,21 @@
   width: 400px;
 }
 
-.email {
+.email2 {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 5px;
   border: 1px solid #fff;
   padding: 5px;
   border-radius: 30px;
 }
 
-.email input {
+.email2 input {
   background-color: #222;
   color: #ccc;
   border: none;
+  width: 100px;
 }
 
 .fbottom ul {
@@ -179,6 +181,7 @@ ul li {
   .soc {
     width: 100%;
     justify-content: center;
+    gap: 20px;
   }
 }
 
@@ -218,9 +221,13 @@ ul li {
   }
 
   .fbottom ul {
-    width: 90%;
-    flex-direction: column;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    text-align: left;
     line-height: 30px;
+    padding: 0;
+    margin: 0;
   }
 
   .soc {
@@ -282,6 +289,7 @@ ul li {
     flex-direction: column;
     gap: 10px;
     width: 100%;
+    font-size: 20px;
   }
   .soc {
     width: 100%;

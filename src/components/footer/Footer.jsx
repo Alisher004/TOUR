@@ -38,10 +38,11 @@ function Footer() {
             <img src={logo2} alt="" className="hlogo" />
             <div className="item">
               <span>Узнавайте о горящих турах первыми</span>
-              <div className="email">
+              <div className="email2">
                 <img src={email} alt="" />
-                <input type="text" placeholder="Введите почту" required />
-                <img src={strelka} alt="" />
+                <div>
+                <input type="email" placeholder="email" required />
+                </div>
               </div>
             </div>
           </div>
