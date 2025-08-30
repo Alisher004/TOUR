@@ -1,4 +1,3 @@
-// Booking.jsx
 import React, { useMemo, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import tours from "../data/tours";
@@ -8,7 +7,6 @@ export default function Booking() {
   const navigate = useNavigate();
   const { id } = useParams();
 
-  // type path аркылуу аныктоо
   const type = window.location.pathname.includes("/hotel") ? "hotel" : "tour";
 
   const item = useMemo(() => {

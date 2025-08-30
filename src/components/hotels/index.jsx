@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { hotels } from "../../data/hotels"; // сен берген массив
+import { hotels } from "../../data/hotels"; 
 import "./style.css";
 import HotelDetails from "./HotelDetails";
 import hotelsvg from "../../assets/hotelsvg.png"
@@ -28,7 +28,6 @@ export default function HotelCarousel() {
         ))}
       </div>
 
-      {/* Modal */}
       {selectedHotel && (
         <HotelDetails hotel={selectedHotel} onClose={() => setSelectedHotel(null)} />
       )}

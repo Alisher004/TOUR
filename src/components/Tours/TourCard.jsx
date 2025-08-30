@@ -80,7 +80,6 @@ export default function Tours() {
             </div>
           ))}
 
-          {/* Дубликат, seamless scroll үчүн */}
           {filteredTours.map((tour) => (
             <div
               key={`clone-${tour.id}`}

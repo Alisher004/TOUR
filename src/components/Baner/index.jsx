@@ -7,7 +7,7 @@ import "./style.css";
 
 function Baner({ image, title, subtitle }) {
   const [openCalendar, setOpenCalendar] = useState(false);
-  const [showPopup, setShowPopup] = useState(false); // Popup абалы
+  const [showPopup, setShowPopup] = useState(false);
 
   const [range, setRange] = useState([
     {
@@ -94,7 +94,7 @@ function Baner({ image, title, subtitle }) {
                   editableDateInputs={true}
                   onChange={(item) => {
                     setRange([item.selection]);
-                    setOpenCalendar(false); // автоматтык жабуу
+                    setOpenCalendar(false);
                   }}
                   moveRangeOnFirstSelection={false}
                   ranges={range}
@@ -108,7 +108,6 @@ function Baner({ image, title, subtitle }) {
               <input type="number" placeholder="люди" className="turis" />
             </div>
 
-            {/* Подобрать кнопка */}
             <button
               type="button"
               className="podbtn"
@@ -120,7 +119,6 @@ function Baner({ image, title, subtitle }) {
         </form>
       </div>
 
-      {/* Popup */}
       {showPopup && (
         <div className="popup-overlay">
           <div className="fon"></div>

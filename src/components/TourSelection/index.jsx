@@ -19,13 +19,11 @@ const HotelListings = () => {
     season: "all",
     features: [],
   });
-  const [isFilterOpen, setIsFilterOpen] = useState(false); // модал үчүн
+  const [isFilterOpen, setIsFilterOpen] = useState(false); 
 
-  // кошумча state'тер
   const [selectedHotel, setSelectedHotel] = useState(null);
   const [bookingData, setBookingData] = useState({ name: "", phone: "" });
 
-  // бронь формасы
   const handleBooking = (e) => {
     e.preventDefault();
     console.log("Бронь маалымат:", bookingData, "Отель:", selectedHotel);
@@ -273,7 +271,6 @@ const HotelListings = () => {
               </select>
             </div>
 
-            {/* кнопка для фильтра */}
             <button
               className="filter-btn"
               onClick={() => setIsFilterOpen(true)}
@@ -283,7 +280,6 @@ const HotelListings = () => {
           </div>
         </header>
 
-        {/* МОДАЛ ФИЛЬТРА */}
         {isFilterOpen && (
           <div className="modal-overlay">
             <div className="modal">
@@ -448,7 +444,7 @@ const HotelListings = () => {
                   </button>
 
 
-                  {selectedHotel && ( <div className="modal-overlay2"> <div className="modal3"> <div className="modal-header"> <h2>{selectedHotel.name}</h2> <button onClick={() => setSelectedHotel(null)}>✕</button> </div> <div className="modal-content3"> <img src={selectedHotel.image} alt={selectedHotel.name} className="modal-img" /> <p><b>Страна:</b> {selectedHotel.country}</p> <p><b>Локация:</b> {selectedHotel.location}</p> <p><b>Даты:</b> {selectedHotel.dateFrom} - {selectedHotel.dateTo}</p> <p><b>Питание:</b> {selectedHotel.mealPlan}</p> <p><b>Цена:</b> {selectedHotel.price.toLocaleString("ru-RU")} {selectedHotel.currency}</p> <h4>Особенности:</h4> <ul> {selectedHotel.features.map((f, i) => ( <li key={i}><img src={done} alt="" className="done" /> {f}</li> ))} </ul> {/* Форма */} <form onSubmit={handleBooking} className="booking-form"> <h3>Забронировать</h3> <input type="text" placeholder="Ваше имя" value={bookingData.name} onChange={(e) => setBookingData({ ...bookingData, name: e.target.value })} required /> <input type="tel" placeholder="Телефон номер" value={bookingData.phone} onChange={(e) => setBookingData({ ...bookingData, phone: e.target.value })} required /> <button type="submit4">Отправить бронь</button> </form> </div> </div> </div> )}
+                  {selectedHotel && ( <div className="modal-overlay2"> <div className="modal3"> <div className="modal-header"> <h2>{selectedHotel.name}</h2> <button onClick={() => setSelectedHotel(null)}>✕</button> </div> <div className="modal-content3"> <img src={selectedHotel.image} alt={selectedHotel.name} className="modal-img" /> <p><b>Страна:</b> {selectedHotel.country}</p> <p><b>Локация:</b> {selectedHotel.location}</p> <p><b>Даты:</b> {selectedHotel.dateFrom} - {selectedHotel.dateTo}</p> <p><b>Питание:</b> {selectedHotel.mealPlan}</p> <p><b>Цена:</b> {selectedHotel.price.toLocaleString("ru-RU")} {selectedHotel.currency}</p> <h4>Особенности:</h4> <ul> {selectedHotel.features.map((f, i) => ( <li key={i}><img src={done} alt="" className="done" /> {f}</li> ))} </ul> <form onSubmit={handleBooking} className="booking-form"> <h3>Забронировать</h3> <input type="text" placeholder="Ваше имя" value={bookingData.name} onChange={(e) => setBookingData({ ...bookingData, name: e.target.value })} required /> <input type="tel" placeholder="Телефон номер" value={bookingData.phone} onChange={(e) => setBookingData({ ...bookingData, phone: e.target.value })} required /> <button type="submit4">Отправить бронь</button> </form> </div> </div> </div> )}
                 </div>
               </div>
             </div>
