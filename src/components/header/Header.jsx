@@ -4,6 +4,7 @@ import logo from "../../assets/logo.png";
 import phone from "../../assets/phone.svg";
 import location from "../../assets/location.svg";
 import strelka from "../../assets/strelka.svg";
+import { Link } from "react-router-dom";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -56,35 +57,37 @@ function Header() {
           {/* Навигация */}
           <ul className={`navigation ${isMenuOpen ? "active" : ""}`}>
             <li>
-              <a href="/tour-selection" onClick={closeMenu}>
+              <Link to="/tour-selection" onClick={closeMenu}>
                 Подбор тура
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/tours" onClick={closeMenu}>
+              <Link to="/tours" onClick={closeMenu}>
                 Горящие туры
-              </a>
-            </li>
-            <li className="hide-on-medium">
-              <a href="/countries" onClick={closeMenu}>
-                Страны
-              </a>
-            </li>
-            <li className="hide-on-medium">
-              <a href="/hotels" onClick={closeMenu}>
-                Отели
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/about" onClick={closeMenu}>
+              <Link to="/countries" onClick={closeMenu}>
+                Страны
+              </Link>
+            </li>
+            <li>
+              <Link to="/hotels" onClick={closeMenu}>
+                Отели
+              </Link>
+            </li>
+            <li>
+              <Link to="/about" onClick={closeMenu}>
                 О нас
-              </a>
+              </Link>
             </li>
           </ul>
 
           <div className="icons">
             <div className="btnwrapper">
-              <button onClick={openModal} className="onclick">оставить заявку</button>
+              <button onClick={openModal} className="onclick">
+                оставить заявку
+              </button>
 
               {/* Modal */}
               {isModalOpen && (
