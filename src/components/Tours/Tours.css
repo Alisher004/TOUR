@@ -117,7 +117,6 @@
   margin-top: 10px;
 }
 
-/* NEW: full-image card with overlay */
 .image-card {
   height: 260px;
   max-width: 200px;
@@ -224,7 +223,7 @@
   display: flex;
   gap: 16px;
   padding-bottom: 10px;
-  overflow: hidden; /* scrollbar алып салуу үчүн */
+  overflow: hidden; 
   position: relative;
 }
 
@@ -239,11 +238,10 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%); /* контентти жарымына чейин жылдырат */
+    transform: translateX(-50%); 
   }
 }
 
-/* Адаптация: Планшет экрандары үчүн (768px - 992px) */
 @media (min-width: 769px) and (max-width: 1024px) {
   .tours-container h1 {
     font-size: 36px;
@@ -272,7 +270,6 @@
   }
 }
 
-/* Адаптация: Мобилдик экрандар үчүн (768px жана андан кичирээк) */
 @media (min-width: 480px) and (max-width: 768px) {
   .tours-container h1 {
     font-size: 28px;
@@ -305,7 +302,6 @@
   }
 }
 
-/* Адаптация: Өтө кичинекей экрандар үчүн (576px жана андан кичирээк) */
 @media (max-width: 479px) {
   .tours-container h1 {
     font-size: 24px;

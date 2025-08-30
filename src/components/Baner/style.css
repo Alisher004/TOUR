@@ -1,15 +1,14 @@
 .baner {
   position: relative;
   width: 100%;
-  height: 800px; /* сүрөт чоноюп кетпеши үчүн чектөө */
-  /* overflow: hidden; */
+  height: 800px;
   margin-top: 20px;
 }
 
 .banerimg {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* сүрөт контейнерге туура келет */
+  object-fit: cover; 
   display: block;
 }
 
@@ -87,7 +86,7 @@ select:focus {
 }
 
 .peoples input {
-  display: block; /* оңдолду */
+  display: block;
 }
 
 .podbtn {
@@ -100,7 +99,7 @@ select:focus {
   font-weight: 500;
   display: flex;
   align-items: center;
-  justify-content: center; /* оңдолду */
+  justify-content: center; 
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -153,8 +152,6 @@ select:focus {
   padding: 5px 0;
 }
 
-/* ============================= */
-/* Планшет (769px - 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
   .baner {
     height: auto;
@@ -179,8 +176,6 @@ select:focus {
   }
 }
 
-/* ============================= */
-/* Мобилдик (480px - 768px) */
 @media (min-width: 480px) and (max-width: 768px) {
   .banerimg {
     height: 100%;
@@ -233,11 +228,9 @@ select:focus {
   }
 }
 
-/* ============================= */
-/* Өтө кичине (≤479px) */
 @media (max-width: 479px) {
   .banerimg {
-    width: 100%; /* оңдолду */
+    width: 100%; 
     object-fit: cover;
   }
   .calendar-modal {

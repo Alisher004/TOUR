@@ -54,7 +54,6 @@ function Header() {
             <img src={logo} alt="" className="hlogo" />
           </a>
 
-          {/* Навигация */}
           <ul className={`navigation ${isMenuOpen ? "active" : ""}`}>
             <li>
               <Link to="/tour-selection" onClick={closeMenu}>
@@ -89,7 +88,6 @@ function Header() {
                 оставить заявку
               </button>
 
-              {/* Modal */}
               {isModalOpen && (
                 <div className="h-modal">
                   <div className="h-modal-content">
@@ -129,7 +127,6 @@ function Header() {
               )}
             </div>
 
-            {/* Phone Icon */}
             <div style={{ position: "relative" }}>
               <img
                 src={phone}
@@ -151,7 +148,6 @@ function Header() {
               )}
             </div>
 
-            {/* Location Icon */}
             <div style={{ position: "relative" }}>
               <img
                 src={location}

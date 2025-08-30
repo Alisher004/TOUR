@@ -37,10 +37,9 @@
   height: 100%;
   object-fit: cover;
   transition: transform 0.6s ease;
-  aspect-ratio: 16/9; /* ✅ Layout бузулбайт */
+  aspect-ratio: 16/9; 
 }
 
-/* Тан кала турган эффект */
 .news-card:hover {
   transform: scale(1.05) rotate(-1.5deg);
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
@@ -85,12 +84,10 @@
   opacity: 0.7;
 }
 
-/* Эки колонкалык карточка */
 .news-card.large {
   grid-column: span 2;
 }
 
-/* Планшет */
 @media (min-width: 769px) and (max-width: 1024px) {
   .news-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -115,7 +112,6 @@
   }
 }
 
-/* Мобилдик */
 @media (min-width: 480px) and (max-width: 768px) {
   .news-grid {
     grid-template-columns: 1fr;
@@ -140,7 +136,6 @@
   }
 }
 
-/* Өтө кичинекей */
 @media (max-width: 479px) {
   .news-grid {
     grid-template-columns: 1fr;

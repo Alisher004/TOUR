@@ -242,7 +242,6 @@
   padding: 0;
 }
 
-/* Модал */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -312,7 +311,6 @@
   transform: translateY(-2px);
 }
 
-/* Анимациялар */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -333,7 +331,6 @@
   }
 }
 
-/* Адаптация: Планшет (769px - 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
   .hotel-info2 {
     border-right: none;
@@ -350,7 +347,6 @@
   }
 }
 
-/* Адаптация: Мобил (480px - 768px) */
 @media (min-width: 480px) and (max-width: 768px) {
   .hotel-listings {
     padding: 15px;
@@ -380,7 +376,6 @@
   }
 }
 
-/* Адаптация: Өтө кичинекей (≤479px) */
 @media (max-width: 479px) {
   .hotel-listings {
     padding: 15px;
@@ -412,10 +407,6 @@
 
 
 
-
-
-
-/* Модалдын үстүндөгү караңгы фон */
 .modal-overlay2 {
   position: fixed;
   top: 0;
@@ -429,7 +420,6 @@
   z-index: 2000;
 }
 
-/* Негизги модал терезе */
 .modal3 {
   background: #fff;
   border-radius: 12px;
@@ -439,7 +429,6 @@
   animation: fadeIn 0.3s ease-in-out;
 }
 
-/* Модал башы */
 .modal-header {
   display: flex;
   justify-content: space-between;
@@ -466,7 +455,6 @@
   color: #000;
 }
 
-/* Модал контент */
 .modal-content3 {
   max-height: 70vh;
   overflow-y: auto;
@@ -488,7 +476,6 @@
   margin-bottom: 10px;
 }
 
-/* Лист */
 .modal-content3 ul {
   padding-left: 18px;
   margin-bottom: 20px;
@@ -501,13 +488,11 @@
   gap: 6px;
 }
 
-/* Done иконка */
 .done {
   width: 16px;
   height: 16px;
 }
 
-/* Бронь формасы */
 .booking-form {
   display: flex;
   flex-direction: column;
@@ -533,7 +518,6 @@
   border-color: #007bff;
 }
 
-/* Кнопка */
 button[type="submit4"] {
   background: #007bff;
   color: #fff;
@@ -549,7 +533,6 @@ button[type="submit4"]:hover {
   background: #0056b3;
 }
 
-/* Анимация */
 @keyframes fadeIn {
   from { opacity: 0; transform: scale(0.95); }
   to { opacity: 1; transform: scale(1); }
