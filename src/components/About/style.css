@@ -94,6 +94,7 @@
   margin: 100px auto;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   border-top: 1px solid #eee;
   padding-top: 20px;
   font-size: 14px;
@@ -102,12 +103,12 @@
   gap: 15px;
 }
 
-.social-icons span {
-  margin-right: 8px;
-  padding: 6px 10px;
-  background-color: #eee;
-  border-radius: 50%;
-  display: inline-block;
+.social-icons {
+  display: flex;
+  justify-content: center;
+}
+.social-icons img{
+  width: 50px;
 }
 .contact-socials{
   text-align: center;
@@ -227,12 +228,11 @@
   }
 
   .about-footer {
-    font-size: 12px;
-    line-height: 20px;
-    gap: 10px;
+    display: block;
+    line-height: 40px;
   }
 
-  .social-icons span {
+  .social-icons {
     padding: 4px 8px;
   }
 }

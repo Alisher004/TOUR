@@ -94,7 +94,7 @@ function Header() {
                     <button className="hclose-button" onClick={closeModal}>
                       X
                     </button>
-                    <h1>Перезвонить вам?</h1>
+                    <h1 className="success-text1">Перезвонить вам?</h1>
                     <p>Оставьте свой номер и наш специалист свяжется с вами</p>
 
                     {!isSuccess ? (

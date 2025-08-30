@@ -108,10 +108,14 @@
   position: relative;
 }
 
-.h-modal-content h1 {
-  font-size: 32px;
+.success-text1 {
+  font-size: 30px;
   font-weight: 400;
   font-family: "Roboto", sans-serif;
+}
+.success-text{
+  font-size: 22px;
+  margin-top: 10px;
 }
 
 .h-modal-content p {
@@ -198,8 +202,31 @@
 }
 
 @media (max-width: 1200px) and (min-width: 769px) {
+  .navigation {
+    position: fixed;
+    top: 68px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 75px);
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding-top: 50px;
+    background: #fff;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .navigation.active {
+    left: 0;
+  }
   .navigation li {
-    display: none;
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+  }
+  .navigation li:last-child {
+    border-bottom: none;
   }
   .mobile-menu-toggle {
     display: flex;
@@ -222,7 +249,7 @@
 
   .navigation {
     position: fixed;
-    top: 75px;
+    top: 68px;
     left: -100%;
     width: 100%;
     height: calc(100vh - 75px);
