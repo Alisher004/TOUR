@@ -87,6 +87,7 @@ select:focus {
 
 .peoples input {
   display: block;
+  font-size: 16px;
 }
 
 .podbtn {
@@ -126,8 +127,6 @@ select:focus {
   width: 80px;
   font-size: 16px;
   border: none;
-}
-.popup-overlay {
 }
 .popup-box {
   position: absolute;

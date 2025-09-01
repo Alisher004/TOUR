@@ -59,7 +59,7 @@ export default function Booking() {
 
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
           <div>
-            <label style={{ display: "block", fontSize: 14, marginBottom: 6 }}>Атыңыз</label>
+            <label style={{ display: "block", fontSize: 16, marginBottom: 6 }}>Атыңыз</label>
             <input
               required
               value={fullName}
@@ -68,7 +68,7 @@ export default function Booking() {
             />
           </div>
           <div>
-            <label style={{ display: "block", fontSize: 14, marginBottom: 6 }}>Телефон</label>
+            <label style={{ display: "block", fontSize: 16, marginBottom: 6 }}>Телефон</label>
             <input
               required
               value={phone}
@@ -77,7 +77,7 @@ export default function Booking() {
             />
           </div>
           <div>
-            <label style={{ display: "block", fontSize: 14, marginBottom: 6 }}>Email</label>
+            <label style={{ display: "block", fontSize: 16, marginBottom: 6 }}>Email</label>
             <input
               required
               type="email"
@@ -87,7 +87,7 @@ export default function Booking() {
             />
           </div>
           <div>
-            <label style={{ display: "block", fontSize: 14, marginBottom: 6 }}>Бошонуу күнү</label>
+            <label style={{ display: "block", fontSize: 16, marginBottom: 6 }}>Бошонуу күнү</label>
             <input
               required
               type="date"
@@ -99,7 +99,7 @@ export default function Booking() {
 
           {type === "hotel" && (
             <div>
-              <label style={{ display: "block", fontSize: 14, marginBottom: 6 }}>Түн саны</label>
+              <label style={{ display: "block", fontSize: 16, marginBottom: 6 }}>Түн саны</label>
               <input
                 type="number"
                 min={1}
@@ -112,7 +112,7 @@ export default function Booking() {
 
           {type === "tour" && (
             <div>
-              <label style={{ display: "block", fontSize: 14, marginBottom: 6 }}>Кишилер саны</label>
+              <label style={{ display: "block", fontSize: 16, marginBottom: 6 }}>Кишилер саны</label>
               <input
                 type="number"
                 min={1}
