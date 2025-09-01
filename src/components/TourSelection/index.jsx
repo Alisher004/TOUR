@@ -281,14 +281,14 @@ const HotelListings = () => {
         </header>
 
         {isFilterOpen && (
-          <div className="modal-overlay">
-            <div className="modal">
-              <div className="modal-header">
+          <div className="modal-overlay3">
+            <div className="modal3">
+              <div className="modal-header3">
                 <h2>Фильтры</h2>
                 <button onClick={() => setIsFilterOpen(false)}>✕</button>
               </div>
 
-              <div className="modal-content">
+              <div className="modal-content3">
                 <div className="filter-group">
                   <h4>Сезон</h4>
                   <label>
@@ -374,7 +374,7 @@ const HotelListings = () => {
                 </div>
               </div>
 
-              <div className="modal-footer">
+              <div className="modal-footer3">
                 <button onClick={() => setIsFilterOpen(false)}>
                   Применить
                 </button>
