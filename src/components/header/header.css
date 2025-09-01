@@ -129,6 +129,7 @@
   border: none;
   border-bottom: 1px solid #000;
   margin: 10px 0;
+  font-size: 16px;
 }
 
 .h-modal-content button {
