@@ -14,7 +14,7 @@ export default function CountryGrid() {
     <div>
       <Baner
         image={baner4}
-        title="страны"
+        title="Страны"
         subtitle="Исследуйте мир: Наши лучшие направления и страны для путешествий"
       />
       <div
